@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
+import { HeroSectionComponent } from './features/home/hero-section/hero-section.component';
 import { HomeComponent } from './features/home/home.component';
 import { SharedModule } from './shared';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeroSectionComponent,
     HomeComponent
   ],
   imports: [
