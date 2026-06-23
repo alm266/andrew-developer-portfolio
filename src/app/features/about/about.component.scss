@@ -10,24 +10,28 @@
 
 .about-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
+  grid-template-columns:
+    minmax(24px, 1fr)
+    minmax(0, 680px)
+    minmax(280px, 44vw);
   gap: 48px;
   align-items: center;
-  width: min(100%, 1120px);
-  margin: 0 auto;
-  padding: 112px 24px 72px;
+  min-height: 88vh;
 }
 
 .about-hero__content {
+  grid-column: 2;
   max-width: 680px;
+  padding: 112px 0 72px;
 }
 
 .about-hero__image {
-  min-height: 620px;
-  border-radius: 8px;
+  align-self: stretch;
+  grid-column: 3;
+  min-height: 88vh;
   background:
     linear-gradient(180deg, rgba(24, 24, 22, 0.02), rgba(24, 24, 22, 0.18)),
-    url('../../../assets/andrew-with-laptop.JPG') center 36% / cover no-repeat;
+    url('../../../assets/andrew-with-laptop.JPG') center 18% / cover no-repeat;
   box-shadow: 0 24px 60px rgba(24, 24, 22, 0.18);
 }
 
@@ -63,11 +67,20 @@ h1 {
   .about-hero {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 96px 20px 56px;
+    min-height: 0;
+  }
+
+  .about-hero__content,
+  .about-hero__image {
+    grid-column: 1;
+  }
+
+  .about-hero__content {
+    padding: 0 20px 56px;
   }
 
   .about-hero__image {
-    min-height: 520px;
     order: -1;
+    min-height: 620px;
   }
 }
