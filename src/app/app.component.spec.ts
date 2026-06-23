@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        SharedModule
       ],
       declarations: [
         AppComponent
@@ -26,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('andrew-developer-portfolio');
   });
 
-  it('should render title', () => {
+  it('should render the navigation toggle', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('andrew-developer-portfolio app is running!');
+    expect(compiled.querySelector('button[aria-label="Open navigation"]')).toBeTruthy();
   });
 });

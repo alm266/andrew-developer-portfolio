@@ -1,0 +1,47 @@
+.nav-toggle {
+  position: fixed;
+  z-index: 900;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(24, 24, 22, 0.18);
+  border-radius: 6px;
+  padding: 0;
+  background: rgba(251, 250, 247, 0.92);
+  box-shadow: 0 12px 30px rgba(24, 24, 22, 0.12);
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: #181816;
+}
+
+.app-main {
+  min-height: 100vh;
+  transition: margin-left 0.35s ease;
+}
+
+.app-main--shifted {
+  margin-left: 250px;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    top: 16px;
+    left: 16px;
+  }
+
+  .app-main--shifted {
+    margin-left: 0;
+  }
+}
