@@ -1,0 +1,6 @@
+<div class="sidenav" [class.sidenav--open]="isNavOpen" aria-label="Primary navigation">
+  <button type="button" class="closebtn" (click)="closeNav()" aria-label="Close navigation">&times;</button>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeNav()">Home</a>
+  <a routerLink="/" fragment="work" (click)="closeNav()">Work</a>
+  <a routerLink="/" fragment="writing" (click)="closeNav()">Writing</a>
+</div>
