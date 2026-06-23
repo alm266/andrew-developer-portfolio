@@ -8,8 +8,8 @@
     </p>
 
     <div class="hero__actions" aria-label="Primary">
-      <a class="button button--primary" routerLink="/" fragment="work">View work</a>
-      <a class="button button--secondary" routerLink="/" fragment="writing">Read writing</a>
+      <a class="button button--primary" href="#work" (click)="scrollToSection($event, 'work')">View work</a>
+      <a class="button button--secondary" href="#writing" (click)="scrollToSection($event, 'writing')">Read writing</a>
     </div>
   </div>
 </section>

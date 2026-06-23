@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ViewportScroller } from '@angular/common';
 
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { HomeComponent } from './home.component';
@@ -10,8 +10,15 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       declarations: [HeroSectionComponent, HomeComponent],
+      providers: [
+        {
+          provide: ViewportScroller,
+          useValue: {
+            scrollToAnchor: jasmine.createSpy('scrollToAnchor'),
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);

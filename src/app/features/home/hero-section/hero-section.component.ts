@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,4 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss'],
 })
-export class HeroSectionComponent {}
+export class HeroSectionComponent {
+  constructor(private viewportScroller: ViewportScroller) {}
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
+}
