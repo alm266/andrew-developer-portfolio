@@ -4,5 +4,21 @@
     <a routerLink="/resume">Resume</a>
     <a routerLink="/contact">Contact</a>
   </nav>
+
+  <nav class="site-footer__social" aria-label="Social links">
+    <a
+      *ngFor="let socialLink of socialLinks"
+      class="site-footer__social-link"
+      [href]="socialLink.href"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="socialLink.label"
+    >
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path [attr.d]="socialLink.icon.path"></path>
+      </svg>
+    </a>
+  </nav>
+
   <p>&copy; {{ currentYear }} Andrew Marshall. All rights reserved.</p>
 </footer>

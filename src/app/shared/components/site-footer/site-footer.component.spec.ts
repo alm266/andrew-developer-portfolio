@@ -28,10 +28,22 @@ describe('SiteFooterComponent', () => {
     expect(compiled.textContent).toContain(`© ${component.currentYear} Andrew Marshall`);
   });
 
-  it('should link to resume and contact pages', () => {
+  it('should link to footer pages', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const links = Array.from(compiled.querySelectorAll('a')).map((link) => link.textContent?.trim());
+    const links = Array.from(compiled.querySelectorAll('.site-footer__nav a')).map((link) => link.textContent?.trim());
 
-    expect(links).toEqual(['Resume', 'Contact']);
+    expect(links).toEqual(['About', 'Resume', 'Contact']);
+  });
+
+  it('should render social links', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const links = Array.from(compiled.querySelectorAll<HTMLAnchorElement>('.site-footer__social-link'));
+
+    expect(links.map((link) => link.getAttribute('aria-label'))).toEqual(['Email', 'GitHub', 'LinkedIn']);
+    expect(links.map((link) => link.href)).toEqual([
+      'mailto:andrewleonmarshall@gmail.com',
+      'https://github.com/alm266',
+      'https://www.linkedin.com/in/andrewleonmarshall',
+    ]);
   });
 });
