@@ -8,15 +8,27 @@
   color: #181816;
 }
 
-.page__header {
-  width: min(100%, 1120px);
-  margin: 0 auto;
+.contact-hero {
+  display: grid;
+  min-height: 78vh;
+  align-items: center;
   padding: 112px 24px 72px;
+  background:
+    linear-gradient(90deg, rgba(24, 24, 22, 0.78), rgba(24, 24, 22, 0.24)),
+    url('../../../assets/paper-cup-phone.jpg') center / cover no-repeat;
+}
+
+.contact-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1120px);
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .page__eyebrow {
   margin: 0 0 16px;
-  color: #6a4f2d;
+  color: #f1d59d;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -31,13 +43,55 @@ p {
 h1 {
   max-width: 820px;
   margin-bottom: 24px;
+  color: #fbfaf7;
   font-size: clamp(2.4rem, 6vw, 5rem);
   line-height: 1;
 }
 
-.page__header > p:last-child {
+.contact-hero__content > p {
   max-width: 720px;
-  color: #44413c;
+  margin-bottom: 32px;
+  color: #f5efe3;
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.contact-hero__actions {
+  display: grid;
+  width: min(100%, 320px);
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.contact-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(251, 250, 247, 0.78);
+  border-radius: 6px;
+  padding: 0 20px;
+  background: rgba(251, 250, 247, 0.08);
+  color: #fbfaf7;
+  font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+  border-color: #fbfaf7;
+  background: rgba(251, 250, 247, 0.18);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 820px) {
+  .contact-hero {
+    min-height: 70vh;
+    padding: 96px 20px 56px;
+  }
+
+  .contact-hero__actions {
+    width: 100%;
+  }
 }
