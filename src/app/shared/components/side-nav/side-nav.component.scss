@@ -31,7 +31,7 @@
 
 .sidenav a:hover,
 .sidenav a.active {
-  color: #fbfaf7;
+  color: var(--nav-color, #fbfaf7);
 }
 
 .sidenav__item {
