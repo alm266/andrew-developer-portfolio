@@ -19,3 +19,55 @@ select {
 p {
   font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
 }
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #181816;
+  border-radius: 6px;
+  padding: 0 20px;
+  font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--light {
+  border-color: #fbfaf7;
+  background: #fbfaf7;
+  color: #181816;
+}
+
+.button--outline-light {
+  border-color: rgba(251, 250, 247, 0.78);
+  background: transparent;
+  color: #fbfaf7;
+}
+
+.button--outline-light:hover {
+  border-color: #fbfaf7;
+  background: rgba(251, 250, 247, 0.12);
+}
+
+.button--dark {
+  border-color: #181816;
+  background: #181816;
+  color: #fbfaf7;
+}
+
+.button--outline-dark {
+  border-color: rgba(24, 24, 22, 0.36);
+  background: transparent;
+  color: #181816;
+}
+
+.button--outline-dark:hover {
+  border-color: #181816;
+  background: rgba(24, 24, 22, 0.06);
+}

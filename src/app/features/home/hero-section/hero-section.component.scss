@@ -61,36 +61,6 @@ h1 {
   gap: 12px;
 }
 
-.button {
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #181816;
-  border-radius: 6px;
-  padding: 0 20px;
-  color: #181816;
-  font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.button--primary {
-  border-color: #fbfaf7;
-  background: #fbfaf7;
-  color: #181816;
-}
-
-.button--secondary {
-  border-color: rgba(251, 250, 247, 0.78);
-  background: transparent;
-  color: #fbfaf7;
-}
-
-.button--secondary:hover {
-  background: rgba(251, 250, 247, 0.12);
-}
-
 @media (max-width: 720px) {
   .hero {
     padding: 56px 20px;

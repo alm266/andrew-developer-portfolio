@@ -22,9 +22,9 @@ describe('ContactComponent', () => {
 
   it('should render contact option links', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const links = Array.from(compiled.querySelectorAll<HTMLAnchorElement>('.contact-button'));
+    const links = Array.from(compiled.querySelectorAll<HTMLAnchorElement>('.contact-details__actions .button'));
 
-    expect(links.map((link) => link.textContent?.trim())).toEqual(['Email Andrew', 'GitHub', 'LinkedIn']);
+    expect(links.map((link) => link.textContent?.trim())).toEqual(['Email Me', 'GitHub', 'LinkedIn']);
     expect(links.map((link) => link.href)).toEqual([
       'mailto:andrewleonmarshall@gmail.com',
       'https://github.com/alm266',
