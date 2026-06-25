@@ -12,9 +12,9 @@
   display: grid;
   grid-template-columns:
     minmax(24px, 1fr)
-    minmax(0, 680px)
-    minmax(280px, 44vw);
-  gap: 48px;
+    minmax(0, min(680px, 52%))
+    minmax(260px, 38%);
+  gap: clamp(24px, 4%, 48px);
   align-items: center;
   min-height: 88vh;
 }
