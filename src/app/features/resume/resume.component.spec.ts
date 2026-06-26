@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { EducationSectionComponent } from './education-section/education-section.component';
 import { ExperienceCardComponent } from './experience-card/experience-card.component';
 import { ResumeComponent } from './resume.component';
 
@@ -9,7 +10,7 @@ describe('ResumeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ExperienceCardComponent, ResumeComponent],
+      declarations: [EducationSectionComponent, ExperienceCardComponent, ResumeComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ResumeComponent);
@@ -34,5 +35,11 @@ describe('ResumeComponent', () => {
       'Triple C Technologies, LLC',
       'Digital Continue',
     ]);
+  });
+
+  it('should render education section', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('app-education-section')).toBeTruthy();
   });
 });
