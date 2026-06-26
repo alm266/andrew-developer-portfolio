@@ -10,6 +10,7 @@ import { ContactComponent } from './features/contact';
 import { HeroSectionComponent } from './features/home/hero-section/hero-section.component';
 import { HomeComponent } from './features/home/home.component';
 import { ProjectsComponent } from './features/projects';
+import { ExperienceCardComponent } from './features/resume/experience-card/experience-card.component';
 import { ResumeComponent } from './features/resume';
 import { WritingComponent } from './features/writing';
 import { SharedModule } from './shared';
@@ -20,6 +21,7 @@ import { SharedModule } from './shared';
     AppComponent,
     CaseStudiesComponent,
     ContactComponent,
+    ExperienceCardComponent,
     HeroSectionComponent,
     HomeComponent,
     ProjectsComponent,

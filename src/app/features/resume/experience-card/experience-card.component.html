@@ -1,0 +1,11 @@
+<article class="experience-card">
+  <div class="experience-card__meta">
+    <h3>{{ entry.company }}</h3>
+    <p>{{ entry.role }}</p>
+    <span>{{ entry.dateRange }}</span>
+    <small>{{ entry.location }}</small>
+  </div>
+  <ul class="experience-card__highlights">
+    <li *ngFor="let highlight of entry.highlights">{{ highlight }}</li>
+  </ul>
+</article>
