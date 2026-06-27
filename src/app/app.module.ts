@@ -13,6 +13,7 @@ import { ProjectsComponent } from './features/projects';
 import { EducationSectionComponent } from './features/resume/education-section/education-section.component';
 import { ExperienceCardComponent } from './features/resume/experience-card/experience-card.component';
 import { ResumeComponent } from './features/resume';
+import { SummarySectionComponent } from './features/resume/summary-section/summary-section.component';
 import { WritingComponent } from './features/writing';
 import { SharedModule } from './shared';
 
@@ -28,6 +29,7 @@ import { SharedModule } from './shared';
     HomeComponent,
     ProjectsComponent,
     ResumeComponent,
+    SummarySectionComponent,
     WritingComponent
   ],
   imports: [
