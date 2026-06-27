@@ -9,6 +9,7 @@
 }
 
 .summary__content {
+  box-sizing: border-box;
   width: min(100%, 1120px);
   margin: 0 auto;
   border: 1px solid rgba(24, 24, 22, 0.08);
