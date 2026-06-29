@@ -1,0 +1,28 @@
+<section class="projects" aria-labelledby="resume-projects-title">
+  <div class="projects__content">
+    <p class="projects__eyebrow">Selected projects</p>
+    <h2 id="resume-projects-title">Internal tools with real business workflows behind them.</h2>
+
+    <div class="projects__list">
+      <article class="project-card" *ngFor="let project of projects">
+        <div class="project-card__meta">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.role }}</p>
+          <span>{{ project.dateRange }}</span>
+        </div>
+
+        <div class="project-card__body">
+          <p class="project-card__description">{{ project.description }}</p>
+
+          <ul class="project-card__highlights">
+            <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+          </ul>
+
+          <ul class="project-card__tools" aria-label="Tools used">
+            <li *ngFor="let tool of project.tools">{{ tool }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

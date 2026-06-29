@@ -13,6 +13,7 @@ import { ProjectsComponent } from './features/projects';
 import { EducationSectionComponent } from './features/resume/education-section/education-section.component';
 import { ExperienceCardComponent } from './features/resume/experience-card/experience-card.component';
 import { ExperienceSectionComponent } from './features/resume/experience-section/experience-section.component';
+import { ProjectSectionComponent } from './features/resume/project-section/project-section.component';
 import { ResumeComponent } from './features/resume';
 import { SummarySectionComponent } from './features/resume/summary-section/summary-section.component';
 import { WritingComponent } from './features/writing';
@@ -29,6 +30,7 @@ import { SharedModule } from './shared';
     ExperienceSectionComponent,
     HeroSectionComponent,
     HomeComponent,
+    ProjectSectionComponent,
     ProjectsComponent,
     ResumeComponent,
     SummarySectionComponent,

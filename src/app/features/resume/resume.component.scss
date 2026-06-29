@@ -9,9 +9,14 @@
 }
 
 .page__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 24vw, 280px);
+  gap: 48px;
+  align-items: center;
   width: min(100%, 1120px);
   margin: 0 auto;
   padding: 112px 24px 72px;
+  box-sizing: border-box;
 }
 
 .page__eyebrow {
@@ -35,9 +40,41 @@ h1 {
   line-height: 1;
 }
 
-.page__header > p:last-child {
+.page__header-copy > p:last-child {
   max-width: 720px;
   color: #44413c;
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.page__profile-frame {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(24, 24, 22, 0.16);
+}
+
+.page__profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 16%;
+  transform: scale(1.12);
+}
+
+@media (max-width: 720px) {
+  .page__header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 96px 20px 56px;
+  }
+
+  .page__profile-frame {
+    width: min(72vw, 240px);
+    justify-self: center;
+    order: -1;
+  }
 }
