@@ -44,7 +44,7 @@ export class ProjectSectionComponent {
     {
       name: 'Reserve Management Tool',
       role: 'Developer',
-      dateRange: 'Dec 2023 - Feb 2024',
+      dateRange: 'Dec 2023 - Feb 2025',
       description:
         'Internal business application for managing when merchandise ships from distribution centers to stores.',
       highlights: [
