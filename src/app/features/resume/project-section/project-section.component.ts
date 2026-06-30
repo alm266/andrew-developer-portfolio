@@ -17,6 +17,19 @@ interface ResumeProject {
 export class ProjectSectionComponent {
   readonly projects: ResumeProject[] = [
     {
+      name: 'Vendor Brand Planning Tool',
+      role: 'Developer',
+      dateRange: 'March 2025 - Present',
+      description:
+        'Internal business application for planning which brands to buy and where to source them from for current and future seasons.',
+      highlights: [
+        'Built and led the effort to create an end-to-end testing suite with Cypress and TypeScript to prevent regressions after codebase updates.',
+        'Expanded regression coverage to more than 110 test cases that run through the CI/CD pipeline.',
+        'Ran weekly production deployments and post-release validation for selected updates, helping confirm releases were working as expected.',
+      ],
+      tools: ['Cypress', 'TypeScript', 'CI/CD'],
+    },
+    {
       name: 'Order Approval Tool',
       role: 'Developer',
       dateRange: 'July 2022 - Feb 2024',
