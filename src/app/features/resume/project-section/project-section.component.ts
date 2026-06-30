@@ -15,6 +15,7 @@ interface ResumeProject {
   styleUrls: ['./project-section.component.scss'],
 })
 export class ProjectSectionComponent {
+  // TODO: Add button to export resume to PDF by pulling data from page into formatted template
   readonly projects: ResumeProject[] = [
     {
       // TODO: Include link to live site
