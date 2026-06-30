@@ -25,7 +25,9 @@ describe('ProjectSectionComponent', () => {
 
     expect(compiled.textContent).toContain('Order Approval Tool');
     expect(compiled.textContent).toContain('Reserve Management Tool');
+    expect(compiled.textContent).toContain('Therapy with Ruth Website');
     expect(compiled.textContent).toContain('Vendor Brand Planning Tool');
     expect(compiled.textContent).toContain('Cypress');
+    expect(compiled.textContent).toContain('Google Search');
   });
 });
