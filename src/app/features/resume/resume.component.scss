@@ -9,6 +9,11 @@
 }
 
 .page__header {
+  background: #181816;
+  color: #fbfaf7;
+}
+
+.page__header-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(180px, 24vw, 280px);
   gap: 48px;
@@ -21,7 +26,7 @@
 
 .page__eyebrow {
   margin: 0 0 16px;
-  color: #6a4f2d;
+  color: #f1d59d;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -42,7 +47,7 @@ h1 {
 
 .page__header-copy > p:last-child {
   max-width: 720px;
-  color: #44413c;
+  color: #f5efe3;
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -66,7 +71,7 @@ h1 {
 }
 
 @media (max-width: 720px) {
-  .page__header {
+  .page__header-content {
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 96px 20px 56px;

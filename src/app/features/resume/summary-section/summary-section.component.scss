@@ -3,7 +3,7 @@
 }
 
 .summary {
-  padding: 0 24px 72px;
+  padding: 72px 24px;
   background: #fbfaf7;
   color: #181816;
 }
@@ -12,6 +12,9 @@
   box-sizing: border-box;
   width: min(100%, 1120px);
   margin: 0 auto;
+}
+
+.summary-card {
   border: 1px solid rgba(24, 24, 22, 0.08);
   border-left: 6px solid #88ce78;
   border-radius: 8px;
@@ -35,13 +38,13 @@ p {
 }
 
 h2 {
-  max-width: 760px;
-  margin-bottom: 20px;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  max-width: 840px;
+  margin-bottom: 32px;
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
 }
 
-.summary__content > p:last-child {
+.summary-card > p:last-child {
   max-width: 860px;
   margin-bottom: 0;
   color: #44413c;
@@ -52,6 +55,6 @@ h2 {
 
 @media (max-width: 720px) {
   .summary {
-    padding: 0 20px 56px;
+    padding: 56px 20px;
   }
 }
