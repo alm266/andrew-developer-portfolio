@@ -12,7 +12,7 @@
   padding: 72px 24px;
   background:
     linear-gradient(90deg, rgba(24, 24, 22, 0.08), rgba(24, 24, 22, 0.74)),
-    url('../../../../assets/andrew-in-flannel.JPG') center / cover no-repeat;
+    url('../../../../assets/andrew-in-flannel.JPG') center top / cover no-repeat;
 }
 
 .hero__content {
@@ -64,6 +64,7 @@ h1 {
 @media (max-width: 720px) {
   .hero {
     padding: 56px 20px;
+    background-position: center top;
   }
 
   .hero__content {
