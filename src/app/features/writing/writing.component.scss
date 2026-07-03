@@ -9,14 +9,23 @@
 }
 
 .page__header {
+  display: grid;
+  min-height: 78vh;
+  align-items: center;
+  padding: 112px 24px 72px;
+  background:
+    linear-gradient(90deg, rgba(24, 24, 22, 0.82), rgba(24, 24, 22, 0.36)),
+    url('../../../assets/typing-on-old-keyboard.jpg') center / cover no-repeat;
+}
+
+.page__header-content {
   width: min(100%, 1120px);
   margin: 0 auto;
-  padding: 112px 24px 72px;
 }
 
 .page__eyebrow {
   margin: 0 0 16px;
-  color: #6a4f2d;
+  color: #f1d59d;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -31,13 +40,22 @@ p {
 h1 {
   max-width: 820px;
   margin-bottom: 24px;
+  color: #fbfaf7;
   font-size: clamp(2.4rem, 6vw, 5rem);
   line-height: 1;
 }
 
-.page__header > p:last-child {
+.page__header-content > p:last-child {
   max-width: 720px;
-  color: #44413c;
+  color: #f5efe3;
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .page__header {
+    min-height: 70vh;
+    padding: 96px 20px 56px;
+    background-position: center;
+  }
 }
