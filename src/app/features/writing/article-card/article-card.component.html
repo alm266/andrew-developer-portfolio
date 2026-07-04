@@ -9,9 +9,39 @@
 
   <div class="article-card__content" *ngIf="article.content?.length">
     <ng-container *ngFor="let block of article.content">
-      <p *ngIf="block.type === 'paragraph' && block.text">{{ block.text }}</p>
+      <p *ngIf="block.type === 'paragraph' && (block.text || block.parts?.length)">
+        <ng-container *ngIf="block.parts?.length; else plainParagraph">
+          <span *ngFor="let part of block.parts" [style.color]="part.color || null">{{ part.text }}</span>
+        </ng-container>
+
+        <ng-template #plainParagraph>{{ block.text }}</ng-template>
+      </p>
 
       <h4 *ngIf="block.type === 'heading' && block.text">{{ block.text }}</h4>
+
+      <ng-container *ngIf="block.type === 'list' && block.items?.length">
+        <ol class="article-card__list" *ngIf="block.ordered; else unorderedList">
+          <li *ngFor="let item of block.items">
+            <ng-container *ngIf="item.parts?.length; else plainOrderedItem">
+              <span *ngFor="let part of item.parts" [style.color]="part.color || null">{{ part.text }}</span>
+            </ng-container>
+
+            <ng-template #plainOrderedItem>{{ item.text }}</ng-template>
+          </li>
+        </ol>
+
+        <ng-template #unorderedList>
+          <ul class="article-card__list">
+            <li *ngFor="let item of block.items">
+              <ng-container *ngIf="item.parts?.length; else plainUnorderedItem">
+                <span *ngFor="let part of item.parts" [style.color]="part.color || null">{{ part.text }}</span>
+              </ng-container>
+
+              <ng-template #plainUnorderedItem>{{ item.text }}</ng-template>
+            </li>
+          </ul>
+        </ng-template>
+      </ng-container>
 
       <figure class="article-card__code" *ngIf="block.type === 'code' && block.text">
         <figcaption *ngIf="block.language || block.caption">

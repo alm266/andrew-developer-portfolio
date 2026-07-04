@@ -93,6 +93,33 @@ export class WritingComponent {
 })
 `
         },
+        {
+          type: 'paragraph',
+          parts: [
+            { text: 'You can see lines 13 - 21 follow a similar pattern. They use ' },
+            { text: 'cy.get(someSelector) ', color: '#2f9860' },
+            { text: 'to grab the HTML element and then we chain a ' },
+            { text: '.should(\'some.assertion\', \'some-class-to-find\') ', color: '#2f9860'  },
+            { text: 'in order to assert against a CSS class.' }
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'From a high level'
+        },
+        {
+          type: 'list',
+          ordered: true,
+          items: [
+            { text: 'We validate our starting state is setup a certain way' },
+            { text: 'We run our tests' },
+            { text: 'We return the UI to its starting state' },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'The app ideally should be returned to a state that will allow whatever following test cases can run unencumbered.'
+        }
       ],
     },
   ];

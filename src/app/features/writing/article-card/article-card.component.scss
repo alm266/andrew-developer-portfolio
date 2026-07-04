@@ -51,7 +51,8 @@
   margin-bottom: 32px;
 }
 
-.article-card__content p {
+.article-card__content p,
+.article-card__list {
   width: min(100%, 680px);
   margin: 0;
   color: #44413c;
@@ -133,15 +134,11 @@
 }
 
 .article-card__tags li {
+  border: 1px solid rgba(86, 156, 214, 0.28);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: rgba(86, 156, 214, 0.1);
   color: #2f3f48;
   font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.article-card__link {
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
-  color: #2f3f48;
   font-weight: 700;
 }
