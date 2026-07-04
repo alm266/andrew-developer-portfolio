@@ -52,10 +52,63 @@ h1 {
   line-height: 1.7;
 }
 
+.case-studies {
+  padding: 72px 24px;
+  background: #fbfaf7;
+}
+
+.case-studies__content {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.case-studies__intro {
+  margin-bottom: 32px;
+}
+
+.case-studies__eyebrow {
+  margin: 0 0 16px;
+  color: #6a4f2d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  max-width: 840px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.case-studies__layout {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+.case-studies__list {
+  display: grid;
+  gap: 24px;
+}
+
 @media (max-width: 720px) {
   .page__header {
     min-height: 70vh;
     padding: 96px 20px 56px;
     background-position: center;
+  }
+
+  .case-studies {
+    padding: 56px 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .case-studies__layout {
+    grid-template-columns: 1fr;
   }
 }

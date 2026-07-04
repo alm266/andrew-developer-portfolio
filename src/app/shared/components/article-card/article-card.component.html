@@ -49,7 +49,7 @@
           <span *ngIf="block.caption">{{ block.caption }}</span>
         </figcaption>
 
-        <pre [class]="getCodeLanguageClass(block.language)"><code [class]="getCodeLanguageClass(block.language)" [innerHTML]="highlightCode(block.text, block.language)"></code></pre>
+        <pre [class]="'line-numbers ' + getCodeLanguageClass(block.language)"><code [class]="getCodeLanguageClass(block.language)">{{ getCodeText(block.text) }}</code></pre>
       </figure>
 
       <figure class="article-card__media" *ngIf="block.type === 'media' && block.media as media">

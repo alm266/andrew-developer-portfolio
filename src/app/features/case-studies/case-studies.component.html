@@ -9,4 +9,27 @@
       </p>
     </div>
   </section>
+
+  <section class="case-studies" aria-labelledby="case-studies-list-title">
+    <div class="case-studies__content">
+      <div class="case-studies__intro">
+        <p class="case-studies__eyebrow">Case Studies</p>
+        <h2 id="case-studies-list-title">Project breakdowns and product decisions.</h2>
+      </div>
+
+      <div class="case-studies__layout">
+        <app-table-of-contents
+          [items]="tableOfContentsItems"
+        ></app-table-of-contents>
+
+        <div class="case-studies__list">
+          <app-article-card
+            *ngFor="let caseStudy of caseStudies; let index = index"
+            [article]="caseStudy"
+            [articleId]="getCaseStudyId(caseStudy, index)"
+          ></app-article-card>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

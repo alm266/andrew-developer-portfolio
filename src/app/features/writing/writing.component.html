@@ -18,16 +18,16 @@
       </div>
 
       <div class="articles__layout">
-        <app-writing-table-of-contents
+        <app-table-of-contents
           [items]="tableOfContentsItems"
-        ></app-writing-table-of-contents>
+        ></app-table-of-contents>
 
         <div class="articles__list">
-          <app-writing-article
+          <app-article-card
             *ngFor="let article of articles; let index = index"
             [article]="article"
             [articleId]="getArticleId(article, index)"
-          ></app-writing-article>
+          ></app-article-card>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArticleCardComponent } from './article-card/article-card.component';
-import { TableOfContentsComponent } from './table-of-contents/table-of-contents.component';
+import { SharedModule } from '../../shared';
 import { WritingComponent } from './writing.component';
 
 describe('WritingComponent', () => {
@@ -10,7 +9,8 @@ describe('WritingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ArticleCardComponent, TableOfContentsComponent, WritingComponent],
+      declarations: [WritingComponent],
+      imports: [SharedModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(WritingComponent);

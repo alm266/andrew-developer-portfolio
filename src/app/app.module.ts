@@ -16,8 +16,6 @@ import { ExperienceSectionComponent } from './features/resume/experience-section
 import { ProjectSectionComponent } from './features/resume/project-section/project-section.component';
 import { ResumeComponent } from './features/resume';
 import { SummarySectionComponent } from './features/resume/summary-section/summary-section.component';
-import { ArticleCardComponent } from './features/writing/article-card/article-card.component';
-import { TableOfContentsComponent } from './features/writing/table-of-contents/table-of-contents.component';
 import { WritingComponent } from './features/writing';
 import { SharedModule } from './shared';
 
@@ -25,7 +23,6 @@ import { SharedModule } from './shared';
   declarations: [
     AboutComponent,
     AppComponent,
-    ArticleCardComponent,
     CaseStudiesComponent,
     ContactComponent,
     EducationSectionComponent,
@@ -37,7 +34,6 @@ import { SharedModule } from './shared';
     ProjectsComponent,
     ResumeComponent,
     SummarySectionComponent,
-    TableOfContentsComponent,
     WritingComponent
   ],
   imports: [

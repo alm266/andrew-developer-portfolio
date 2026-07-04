@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
 
-import { WritingArticleTocItem } from '../writing-article';
+import { ArticleTocItem } from '../../models/article';
 
 @Component({
-  selector: 'app-writing-table-of-contents',
+  selector: 'app-table-of-contents',
   templateUrl: './table-of-contents.component.html',
   styleUrls: ['./table-of-contents.component.scss'],
 })
 export class TableOfContentsComponent {
-  @Input() items: WritingArticleTocItem[] = [];
+  @Input() items: ArticleTocItem[] = [];
 
-  scrollToArticle(event: Event, item: WritingArticleTocItem): void {
+  scrollToArticle(event: Event, item: ArticleTocItem): void {
     event.preventDefault();
 
     document.getElementById(item.id)?.scrollIntoView({

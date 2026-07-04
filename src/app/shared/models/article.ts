@@ -1,4 +1,4 @@
-export interface WritingArticleMedia {
+export interface ArticleMedia {
   src: string;
   alt: string;
   caption?: string;
@@ -7,32 +7,32 @@ export interface WritingArticleMedia {
   poster?: string;
 }
 
-export interface WritingArticleTextPart {
+export interface ArticleTextPart {
   text: string;
   color?: string;
 }
 
-export interface WritingArticleListItem {
+export interface ArticleListItem {
   text?: string;
-  parts?: WritingArticleTextPart[];
+  parts?: ArticleTextPart[];
 }
 
-export interface WritingArticleBlock {
+export interface ArticleBlock {
   type: 'paragraph' | 'media' | 'heading' | 'code' | 'list';
   text?: string;
-  parts?: WritingArticleTextPart[];
-  items?: WritingArticleListItem[];
+  parts?: ArticleTextPart[];
+  items?: ArticleListItem[];
   ordered?: boolean;
   caption?: string;
   language?: string;
-  media?: WritingArticleMedia;
+  media?: ArticleMedia;
 }
 
-export interface WritingArticle {
+export interface Article {
   id?: string;
   title: string;
   summary?: string;
-  content?: WritingArticleBlock[];
+  content?: ArticleBlock[];
   eyebrow?: string;
   date?: string;
   href?: string;
@@ -40,7 +40,7 @@ export interface WritingArticle {
   tags?: string[];
 }
 
-export interface WritingArticleTocItem {
+export interface ArticleTocItem {
   id: string;
   title: string;
 }

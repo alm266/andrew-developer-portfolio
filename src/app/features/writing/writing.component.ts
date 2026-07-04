@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { WritingArticle, WritingArticleTocItem } from './writing-article';
+import { Article, ArticleTocItem } from '../../shared';
 
 @Component({
   selector: 'app-writing',
@@ -8,7 +8,7 @@ import { WritingArticle, WritingArticleTocItem } from './writing-article';
   styleUrls: ['./writing.component.scss'],
 })
 export class WritingComponent {
-  readonly articles: WritingArticle[] = [
+  readonly articles: Article[] = [
     {
       eyebrow: 'E2E Testing Basics',
       title: 'E2E Testing Basics',
@@ -134,12 +134,12 @@ export class WritingComponent {
     },
   ];
 
-  readonly tableOfContentsItems: WritingArticleTocItem[] = this.articles.map((article, index) => ({
+  readonly tableOfContentsItems: ArticleTocItem[] = this.articles.map((article, index) => ({
     id: this.getArticleId(article, index),
     title: article.title,
   }));
 
-  getArticleId(article: WritingArticle, index: number): string {
+  getArticleId(article: Article, index: number): string {
     return article.id || `${this.slugify(article.title)}-${index + 1}`;
   }
 

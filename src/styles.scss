@@ -117,3 +117,38 @@ p {
 .token.variable {
   color: #d16969;
 }
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 4.6em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 0;
+  left: -4.1em;
+  width: 3em;
+  border-right: 1px solid rgba(245, 239, 227, 0.18);
+  color: rgba(245, 239, 227, 0.48);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  pointer-events: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+  display: block;
+  padding-right: 0.8em;
+  content: counter(linenumber);
+  text-align: right;
+}
