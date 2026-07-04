@@ -9,4 +9,27 @@
       </p>
     </div>
   </section>
+
+  <section class="articles" aria-labelledby="articles-title">
+    <div class="articles__content">
+      <div class="articles__intro">
+        <p class="articles__eyebrow">Articles</p>
+        <h2 id="articles-title">Published pieces and drafts.</h2>
+      </div>
+
+      <div class="articles__layout">
+        <app-writing-table-of-contents
+          [items]="tableOfContentsItems"
+        ></app-writing-table-of-contents>
+
+        <div class="articles__list">
+          <app-writing-article
+            *ngFor="let article of articles; let index = index"
+            [article]="article"
+            [articleId]="getArticleId(article, index)"
+          ></app-writing-article>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

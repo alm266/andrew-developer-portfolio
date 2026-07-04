@@ -1,0 +1,54 @@
+<article class="article-card" [attr.id]="articleId || null">
+  <div class="article-card__meta" *ngIf="article.eyebrow || article.date">
+    <span *ngIf="article.eyebrow">{{ article.eyebrow }}</span>
+    <time *ngIf="article.date">{{ article.date }}</time>
+  </div>
+
+  <h3>{{ article.title }}</h3>
+  <p class="article-card__summary" *ngIf="article.summary">{{ article.summary }}</p>
+
+  <div class="article-card__content" *ngIf="article.content?.length">
+    <ng-container *ngFor="let block of article.content">
+      <p *ngIf="block.type === 'paragraph' && block.text">{{ block.text }}</p>
+
+      <h4 *ngIf="block.type === 'heading' && block.text">{{ block.text }}</h4>
+
+      <figure class="article-card__code" *ngIf="block.type === 'code' && block.text">
+        <figcaption *ngIf="block.language || block.caption">
+          <span *ngIf="block.language">{{ block.language }}</span>
+          <span *ngIf="block.caption">{{ block.caption }}</span>
+        </figcaption>
+
+        <pre [class]="getCodeLanguageClass(block.language)"><code [class]="getCodeLanguageClass(block.language)" [innerHTML]="highlightCode(block.text, block.language)"></code></pre>
+      </figure>
+
+      <figure class="article-card__media" *ngIf="block.type === 'media' && block.media as media">
+        <video
+          *ngIf="isVideo(media); else imageMedia"
+          [attr.aria-label]="media.alt"
+          [poster]="media.poster || null"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source [src]="media.src" [type]="media.mimeType || null" />
+        </video>
+
+        <ng-template #imageMedia>
+          <img [src]="media.src" [alt]="media.alt" loading="lazy" />
+        </ng-template>
+
+        <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>
+      </figure>
+    </ng-container>
+  </div>
+
+  <ul class="article-card__tags" *ngIf="article.tags?.length" aria-label="Article topics">
+    <li *ngFor="let tag of article.tags">{{ tag }}</li>
+  </ul>
+
+  <a class="article-card__link" *ngIf="article.href" [href]="article.href">
+    {{ article.linkLabel || 'Read article' }}
+  </a>
+</article>

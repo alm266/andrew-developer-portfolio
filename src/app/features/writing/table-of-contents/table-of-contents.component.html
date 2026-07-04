@@ -1,0 +1,11 @@
+<nav class="toc" aria-label="Writing articles">
+  <p>Contents</p>
+
+  <ol>
+    <li *ngFor="let item of items">
+      <a [href]="'#' + item.id" (click)="scrollToArticle($event, item)">
+        {{ item.title }}
+      </a>
+    </li>
+  </ol>
+</nav>

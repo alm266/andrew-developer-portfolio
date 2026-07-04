@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 96px;
+}
+
+.toc {
+  border-left: 2px solid rgba(24, 24, 22, 0.16);
+  padding-left: 16px;
+}
+
+.toc p {
+  margin: 0 0 14px;
+  color: #6a4f2d;
+  font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc a {
+  color: #44413c;
+  font-family: Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.toc a:hover,
+.toc a:focus-visible {
+  color: #181816;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 960px) {
+  :host {
+    position: static;
+  }
+
+  .toc {
+    border-top: 1px solid rgba(24, 24, 22, 0.14);
+    border-left: 0;
+    padding-top: 20px;
+    padding-left: 0;
+  }
+}
