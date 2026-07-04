@@ -12,7 +12,7 @@ export class WritingComponent {
     {
       eyebrow: 'E2E Testing Basics',
       title: 'E2E Testing Basics',
-      date: 'Jul 3, 2026',
+      date: 'Jun 18, 2026',
       summary:
         'Here is my simple approach to E2E testing and what I learned during the process of adding them to my project.',
       linkLabel: 'E2E Basics',
@@ -130,6 +130,169 @@ export class WritingComponent {
           type: 'paragraph',
           text: 'The app ideally should be returned to a state that will allow whatever following test cases can run unencumbered.'
         }
+      ],
+    },
+    {
+      eyebrow: 'Unit Testing Basics',
+      title: 'Unit Testing Basics',
+      date: 'Jun 17, 2026',
+      summary:
+        'A practical explanation of unit testing, what belongs in a unit test, and how acceptance criteria can turn into focused test cases.',
+      linkLabel: 'Unit Testing Basics',
+      tags: ['Documentation', 'Developer Education', 'Testing', 'Unit Tests'],
+      content: [
+        {
+          type: 'heading',
+          text: 'Overview',
+        },
+        {
+          type: 'paragraph',
+          text: 'Unit tests focus on testing and validating one distinct unit of a codebase. That unit is often one focused piece of logic that can be exercised independently.',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'A function' },
+            { text: 'A class' },
+            { text: 'A service' },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Any dependencies outside of this unit are mocked so they can be controlled while testing the scenarios the unit needs to handle.',
+        },
+        {
+          type: 'paragraph',
+          text: 'A good approach is to create at least one test case for each acceptance criterion in your ticket, plus test cases for edge cases you encounter, so those behaviors stay covered over time.',
+        },
+        {
+          type: 'paragraph',
+          text: 'In our Angular apps we use Karma and Jasmine for unit tests. For Python we use Nose2. Our Node APIs use Jest in both JavaScript and TypeScript.',
+        },
+        {
+          type: 'heading',
+          text: 'Example',
+        },
+        {
+          type: 'paragraph',
+          text: 'Let us say we have a ticket whose requirements involve displaying dollar values in a particular format in our application. We refine the following user story and acceptance criteria with our business partners.',
+        },
+        {
+          type: 'heading',
+          text: 'User Story',
+        },
+        {
+          type: 'paragraph',
+          text: 'As a user of Money Table Tool'
+        },
+        {
+          type: 'paragraph',
+          text: 'When I want to see all values in the Dollars column always have 2 decimal places, commas every 3 whole number digits and a $ symbol on the far left'
+        },
+        {
+          type: 'paragraph',
+          text: 'So that the values are easy to read and understand at a glance'
+        },
+        {
+          type: 'heading',
+          text: 'Acceptance Criteria',
+        },
+        {
+          type: 'list',
+          ordered: true,
+          items: [
+            {
+              text: 'Given the Working View Table, when a user looks at the Dollars column, then all cells should have a dollar sign ($) to the left of the number.',
+            },
+            {
+              text: 'Given the Working View Table, when a user looks at the Dollars column, then there should always be exactly two decimal values visible.',
+            },
+            {
+              text: 'Given the Working View Table, when a user looks at the Dollars column, then there should be a comma separating every three whole number values.',
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Here we have the function signature.',
+        },
+        {
+          type: 'code',
+          language: 'TypeScript',
+          caption: 'Dollar formatter function signature',
+          text: `function formatDollars(amount: number): string {
+  ...
+}`,
+        },
+        {
+          type: 'paragraph',
+          text: 'Once the function is written, we are ready to write test cases that ensure the logic remains consistent in the future. We do not need to worry about the implementation details for this example.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Since we have three acceptance criteria, I will start with three test cases to cover those basics. For Jasmine/Karma and Jest, the syntax is very similar, so this test approach should apply to either setup.',
+        },
+        {
+          type: 'code',
+          language: 'TypeScript',
+          caption: 'Unit tests for dollar formatting',
+          text: `describe('formatDollars', () => {
+  // These first three cover the basics that were asked for
+  it('should add a "$" to the beginning of the string', () => {
+    const amount = 5.55;
+    const expectedResult = '$5.55';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  it('should round decimals to just two', () => {
+    const amount = 5.3939;
+    const expectedResult = '$5.39';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  it('should add a comma after three whole number digits', () => {
+    const amount = 1999.99;
+    const expectedResult = '$1,999.99';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  // We realize there are some edge cases that we should make sure we cover
+  it('should add two zeroes to the decimal part of the string', () => {
+    const amount = 5;
+    const expectedResult = '$5.00';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  it('should add another zero to the decimal part of the string', () => {
+    const amount = 5.1;
+    const expectedResult = '$5.10';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  it('should not begin number with a comma', () => {
+    const amount = 100;
+    const expectedResult = '$100.00';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+
+  it('should add multiple commas after every three whole number digits', () => {
+    const amount = 1000000000;
+    const expectedResult = '$1,000,000,000.00';
+
+    expect(formatterUtils.formatDollars(amount)).toEqual(expectedResult);
+  });
+});`,
+        },
+        {
+          type: 'paragraph',
+          text: 'You can see above that we start by covering the basics of what was asked for. After that, we identify scenarios that might occur and make sure our logic handles them after future updates to the code.',
+        },
       ],
     },
   ];
