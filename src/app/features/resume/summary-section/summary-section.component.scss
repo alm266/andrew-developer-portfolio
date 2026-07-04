@@ -14,15 +14,6 @@
   margin: 0 auto;
 }
 
-.summary-card {
-  border: 1px solid rgba(24, 24, 22, 0.08);
-  border-left: 6px solid #88ce78;
-  border-radius: 8px;
-  padding: clamp(24px, 4vw, 40px);
-  background: #fff;
-  box-shadow: 0 16px 36px rgba(24, 24, 22, 0.08);
-}
-
 .summary__eyebrow {
   margin: 0 0 16px;
   color: #6a4f2d;
@@ -44,7 +35,7 @@ h2 {
   line-height: 1;
 }
 
-.summary-card > p:last-child {
+.summary__body {
   max-width: 860px;
   margin-bottom: 0;
   color: #44413c;
