@@ -16,7 +16,7 @@ export class WritingComponent {
       summary:
         'Here is my simple approach to E2E testing and what I learned during the process of adding them to my project.',
       linkLabel: 'E2E Basics',
-      tags: ['Documentation', 'Developer education'],
+      tags: ['Documentation', 'Developer Education', 'Testing', 'E2E'],
       content: [
         {
           type: 'heading',
@@ -24,13 +24,23 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: `
-                End-to-End tests focus on testing and validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.
-                Although it is possible to mock certain dependencies, our team\’s approach is typically not to do so and instead to do all tests in the lower environments (DEV) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in DEV will be promoted up to Production.
-                We do not have a test user for our Cypress tests currently (we were blocked within IT from creating one).
-                The strength of E2E tests is that they can test applications at a high level and are less focused on the specifics of how the logic gets there and should be less fragile than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.
-                On the flip side, they are not usually great for validating numbers and complex calculations. The reason for this is because E2E tests are slow to run especially compared to unit tests which are much better suited to . You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.
-                `
+          text: 'End-to-End tests focus on testing and validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.'
+        },
+        {
+          type: 'paragraph',
+          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (DEV) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in DEV will be promoted up to Production.'
+        },
+        {
+          type: 'paragraph',
+          text: 'We do not have a test user for our Cypress tests currently (we were blocked within IT from creating one).'
+        },
+        {
+          type: 'paragraph',
+          text: 'The strength of E2E tests is that they can test applications at a high level and are less focused on the specifics of how the logic gets there and should be less fragile than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.'
+        },
+        {
+          type: 'paragraph',
+          text: 'On the flip side, they are not usually great for validating numbers and complex calculations. The reason for this is because E2E tests are slow to run especially compared to unit tests which are much better suited to . You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.'
         },
         {
           type: 'heading',
