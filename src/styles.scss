@@ -152,3 +152,47 @@ pre.line-numbers > code {
   content: counter(linenumber);
   text-align: right;
 }
+
+app-article-card,
+.article-card,
+.article-card__content,
+.article-card__content p,
+.article-card__list,
+.article-card__content h4,
+.article-card__code,
+.article-card__media,
+.article-card__media img,
+.article-card__media video,
+.article-card__media figcaption {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-card__media img,
+.article-card__media video {
+  inline-size: 100%;
+}
+
+@media (max-width: 720px) {
+  app-article-card,
+  .article-card__code,
+  .article-card__content p,
+  .article-card__content h4,
+  .article-card__list,
+  .article-card__media img,
+  .article-card__media video,
+  .article-card__media figcaption {
+    width: 100%;
+  }
+
+  .article-card__list {
+    padding-left: 22px;
+  }
+
+  .article-card__code pre {
+    padding-right: 12px;
+    padding-left: 4.3em;
+    font-size: 0.82rem;
+  }
+}

@@ -88,10 +88,12 @@ h2 {
   grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
   gap: clamp(32px, 6vw, 72px);
   align-items: start;
+  min-width: 0;
 }
 
 .case-studies__list {
   display: grid;
+  min-width: 0;
   gap: 24px;
 }
 
