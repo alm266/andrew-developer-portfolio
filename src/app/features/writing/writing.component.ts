@@ -295,6 +295,61 @@ export class WritingComponent {
         },
       ],
     },
+    {
+      eyebrow: 'Testing Approach',
+      title: 'Testing Approach',
+      date: 'Jun 16, 2026',
+      summary:
+        'A high-level overview of why test suites matter, the kinds of tests our team uses, and how tests protect expected application behavior over time.',
+      linkLabel: 'Testing Approach',
+      tags: ['Documentation', 'Developer Education', 'Testing'],
+      content: [
+        {
+          type: 'heading',
+          text: 'Overview',
+        },
+        {
+          type: 'paragraph',
+          text: 'The goal of our test suite is to ensure that the behavior of our applications and APIs stays consistent and intentional as they evolve. Tests provide a layer of protection so updates to our code do not alter other logic as an unintended side effect.',
+        },
+        {
+          type: 'paragraph',
+          text: 'It is unrealistic for any developer to remember every decision, flow of logic, or edge case in an app. You can think of test cases as a checklist of expected outcomes for an application.',
+        },
+        {
+          type: 'heading',
+          text: 'Types Of Tests',
+        },
+        {
+          type: 'paragraph',
+          text: 'Our team uses a few different types of test cases.',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Unit tests' },
+            { text: 'End-to-end tests' },
+            { text: 'Integration tests' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'How We Approach Testing',
+        },
+        {
+          type: 'paragraph',
+          text: 'As of writing this doc, we do not enforce TDD, or test-driven development. We follow something closer to BDD, or behavior-driven development. We refine user stories and acceptance criteria for all our tasks as tickets in JIRA.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Our test cases help us ensure that these requirements are maintained as code changes.',
+        },
+        {
+          type: 'paragraph',
+          text: 'An important note is that generally we should not alter or remove test cases unless there was a requirement change or the logic being tested has been removed from the application.',
+        },
+      ],
+    },
   ];
 
   readonly tableOfContentsItems: ArticleTocItem[] = this.articles.map((article, index) => ({
