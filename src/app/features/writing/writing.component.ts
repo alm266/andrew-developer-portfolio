@@ -10,13 +10,13 @@ import { Article, ArticleTocItem } from '../../shared';
 export class WritingComponent {
   readonly articles: Article[] = [
     {
-      eyebrow: 'E2E Testing Basics',
-      title: 'E2E Testing Basics',
-      date: 'Jun 18, 2026',
+      eyebrow: 'Testing Approach',
+      title: 'Testing Approach',
+      date: 'Jun 16, 2026',
       summary:
-        'Here is my simple approach to E2E testing and what I learned during the process of adding them to my project.',
-      linkLabel: 'E2E Basics',
-      tags: ['Documentation', 'Developer Education', 'Testing', 'E2E'],
+        'A high-level overview of why test suites matter, the kinds of tests our team uses, and how tests protect expected application behavior over time.',
+      linkLabel: 'Testing Approach',
+      tags: ['Documentation', 'Developer Education', 'Testing', 'E2E', 'Unit Testing'],
       content: [
         {
           type: 'heading',
@@ -24,126 +24,47 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'End-to-End tests focus on testing and validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.'
+          text: 'The goal of our test suite is to ensure that the behavior of our applications and APIs stays consistent and intentional as they evolve. Tests provide a layer of protection so updates to our code do not alter other logic as an unintended side effect.',
         },
         {
           type: 'paragraph',
-          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (DEV) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in DEV will be promoted up to Production.'
-        },
-        {
-          type: 'paragraph',
-          text: 'We do not have a test user for our Cypress tests currently (we were blocked within IT from creating one).'
-        },
-        {
-          type: 'paragraph',
-          text: 'The strength of E2E tests is that they can test applications at a high level and are less focused on the specifics of how the logic gets there and should be less fragile than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.'
-        },
-        {
-          type: 'paragraph',
-          text: 'On the flip side, they are not usually great for validating numbers and complex calculations. The reason for this is because E2E tests are slow to run especially compared to unit tests which are much better suited to . You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.'
+          text: 'It is unrealistic for any developer to remember every decision, flow of logic, or edge case in an app. You can think of test cases as a checklist of expected outcomes for an application.',
         },
         {
           type: 'heading',
-          text: 'Example',
+          text: 'Types Of Tests',
         },
         {
           type: 'paragraph',
-          text: 'I will use the sidebar in one of our applications as an example of something we might test. Below is a screenshot from the application. You can see on the left hand side there is a black sidebar that contains various buttons and UI pieces. We are going to focus on the X button on the right side.',
-        },
-        {
-          type: 'media',
-          media: {
-            src: 'assets/docs-media/sidebar-button.png',
-            alt: 'x button for closing side bar menu.'
-          }
-        },
-        {
-          type: 'paragraph',
-          text: 'When the button is clicked, the sidebar is expected to be hidden from view and more of the main page becomes visible.',
-        },
-        {
-          type: 'media',
-          media: {
-            kind:'video',
-            src: 'assets/docs-media/sidebar-closing.mov',
-            alt: 'gif of side bar menu closing.',
-            mimeType: 'video/quicktime'
-          }
-        },
-        {
-          type: 'paragraph',
-          text: 'Most test cases function by using what is referred to as Selectors to grab an HTML element in our app and then check its state based on the CSS classes attached to it. The following is what the code for testing this interaction might look like in Cypress:'
-        },
-        {
-          type: 'code',
-          language: 'TypeScript',
-          caption: 'Cypress sidebar end to end test cases',
-          text: `describe('Sidebar Display Button', () => {
-  beforeEach(() => {
-	cy.visit('/'); // Travel to root URL of our app
-  });
- 
-  it('should be able to collapse/expand the sidebar drawer', () => {
- 
-	// We define our selectors for the button and the sidebar drawer
-	const sidebarDisplayButton = '[data-cy="sidebar-btn"]';
-	const sidebarDrawer = '[data-cy=sidebar-drawer]';
- 
-	// Sidebar drawer should be intially open
-	cy.get(sidebarDrawer).should('have.class', 'mat-drawer-opened');
- 
-	// Sidebar drawer should collapse when button is clicked
-	cy.get(sidebarDisplayButton).click();
-	cy.get(sidebarDrawer).should('not.have.class', 'mat-drawer-opened');
- 
-	// Sidebar drawer should expand again from collapse state on button click
-	cy.get(sidebarDisplayButton).click();
-	cy.get(sidebarDrawer).should('have.class', 'mat-drawer-opened');
-  })
-})
-`
-        },
-        {
-          type: 'paragraph',
-          parts: [
-            { text: 'You can see lines 13 - 21 follow a similar pattern. They use ' },
-            { text: 'cy.get(someSelector) ', color: '#2f9860' },
-            { text: 'to grab the HTML element and then we chain a ' },
-            { text: '.should(\'some.assertion\', \'some-class-to-find\') ', color: '#2f9860'  },
-            { text: 'in order to assert against a CSS class.' }
-          ],
-        },
-        {
-          type: 'paragraph',
-          text: 'From a high level'
+          text: 'Our team uses a few different types of test cases.',
         },
         {
           type: 'list',
-          ordered: true,
           items: [
-            { text: 'We validate our starting state is setup a certain way' },
-            { text: 'We run our tests' },
-            { text: 'We return the UI to its starting state' },
+            { text: 'Unit tests' },
+            { text: 'End-to-end tests' },
+            { text: 'Integration tests' },
           ],
         },
         {
+          type: 'heading',
+          text: 'How We Approach Testing',
+        },
+        {
           type: 'paragraph',
-          text: 'The app ideally should be returned to a state that will allow whatever following test cases can run unencumbered.'
-        }
-      ],
-    },
-    {
-      eyebrow: 'Unit Testing Basics',
-      title: 'Unit Testing Basics',
-      date: 'Jun 17, 2026',
-      summary:
-        'A practical explanation of unit testing, what belongs in a unit test, and how acceptance criteria can turn into focused test cases.',
-      linkLabel: 'Unit Testing Basics',
-      tags: ['Documentation', 'Developer Education', 'Testing', 'Unit Tests'],
-      content: [
+          text: 'As of writing this doc, we do not enforce TDD, or test-driven development. We follow something closer to BDD, or behavior-driven development. We refine user stories and acceptance criteria for all our tasks as tickets in JIRA.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Our test cases help us ensure that these requirements are maintained as code changes.',
+        },
+        {
+          type: 'paragraph',
+          text: 'An important note is that generally we should not alter or remove test cases unless there was a requirement change or the logic being tested has been removed from the application.',
+        },
         {
           type: 'heading',
-          text: 'Overview',
+          text: 'Unit',
         },
         {
           type: 'paragraph',
@@ -293,60 +214,117 @@ export class WritingComponent {
           type: 'paragraph',
           text: 'You can see above that we start by covering the basics of what was asked for. After that, we identify scenarios that might occur and make sure our logic handles them after future updates to the code.',
         },
-      ],
-    },
-    {
-      eyebrow: 'Testing Approach',
-      title: 'Testing Approach',
-      date: 'Jun 16, 2026',
-      summary:
-        'A high-level overview of why test suites matter, the kinds of tests our team uses, and how tests protect expected application behavior over time.',
-      linkLabel: 'Testing Approach',
-      tags: ['Documentation', 'Developer Education', 'Testing'],
-      content: [
         {
           type: 'heading',
-          text: 'Overview',
+          text: 'End-to-End',
         },
         {
           type: 'paragraph',
-          text: 'The goal of our test suite is to ensure that the behavior of our applications and APIs stays consistent and intentional as they evolve. Tests provide a layer of protection so updates to our code do not alter other logic as an unintended side effect.',
+          text: 'End-to-End tests focus on testing and validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.'
         },
         {
           type: 'paragraph',
-          text: 'It is unrealistic for any developer to remember every decision, flow of logic, or edge case in an app. You can think of test cases as a checklist of expected outcomes for an application.',
+          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (Dev & Test) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in the lower environments will be promoted up to Production.'
+        },
+        {
+          type: 'paragraph',
+          text: 'We do not have a test user for our Cypress tests currently (we were blocked within IT from creating one).'
+        },
+        {
+          type: 'paragraph',
+          text: 'The strength of E2E tests is that they can test applications at a high level and are less focused on the specifics of how the logic gets there and should be less fragile than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.'
+        },
+        {
+          type: 'paragraph',
+          text: 'On the flip side, they are not usually great for validating numbers and complex calculations. The reason for this is because E2E tests are slow to run especially compared to unit tests which are much better suited to . You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.'
         },
         {
           type: 'heading',
-          text: 'Types Of Tests',
+          text: 'Example',
         },
         {
           type: 'paragraph',
-          text: 'Our team uses a few different types of test cases.',
+          text: 'I will use the sidebar in one of our applications as an example of something we might test. Below is a screenshot from the application. You can see on the left hand side there is a black sidebar that contains various buttons and UI pieces. We are going to focus on the X button on the right side.',
         },
         {
-          type: 'list',
-          items: [
-            { text: 'Unit tests' },
-            { text: 'End-to-end tests' },
-            { text: 'Integration tests' },
+          type: 'media',
+          media: {
+            src: 'assets/docs-media/sidebar-button.png',
+            alt: 'x button for closing side bar menu.'
+          }
+        },
+        {
+          type: 'paragraph',
+          text: 'When the button is clicked, the sidebar is expected to be hidden from view and more of the main page becomes visible.',
+        },
+        {
+          type: 'media',
+          media: {
+            kind:'video',
+            src: 'assets/docs-media/sidebar-closing.mov',
+            alt: 'gif of side bar menu closing.',
+            mimeType: 'video/quicktime'
+          }
+        },
+        {
+          type: 'paragraph',
+          text: 'Most test cases function by using what is referred to as Selectors to grab an HTML element in our app and then check its state based on the CSS classes attached to it. The following is what the code for testing this interaction might look like in Cypress:'
+        },
+        {
+          type: 'code',
+          language: 'TypeScript',
+          caption: 'Cypress sidebar end to end test cases',
+          text: `describe('Sidebar Display Button', () => {
+  beforeEach(() => {
+	cy.visit('/'); // Travel to root URL of our app
+  });
+ 
+  it('should be able to collapse/expand the sidebar drawer', () => {
+ 
+	// We define our selectors for the button and the sidebar drawer
+	const sidebarDisplayButton = '[data-cy="sidebar-btn"]';
+	const sidebarDrawer = '[data-cy=sidebar-drawer]';
+ 
+	// Sidebar drawer should be intially open
+	cy.get(sidebarDrawer).should('have.class', 'mat-drawer-opened');
+ 
+	// Sidebar drawer should collapse when button is clicked
+	cy.get(sidebarDisplayButton).click();
+	cy.get(sidebarDrawer).should('not.have.class', 'mat-drawer-opened');
+ 
+	// Sidebar drawer should expand again from collapse state on button click
+	cy.get(sidebarDisplayButton).click();
+	cy.get(sidebarDrawer).should('have.class', 'mat-drawer-opened');
+  })
+})
+`
+        },
+        {
+          type: 'paragraph',
+          parts: [
+            { text: 'You can see lines 13 - 21 follow a similar pattern. They use ' },
+            { text: 'cy.get(someSelector) ', color: '#2f9860' },
+            { text: 'to grab the HTML element and then we chain a ' },
+            { text: '.should(\'some.assertion\', \'some-class-to-find\') ', color: '#2f9860'  },
+            { text: 'in order to assert against a CSS class.' }
           ],
         },
         {
-          type: 'heading',
-          text: 'How We Approach Testing',
+          type: 'paragraph',
+          text: 'From a high level'
+        },
+        {
+          type: 'list',
+          ordered: true,
+          items: [
+            { text: 'We validate our starting state is setup a certain way' },
+            { text: 'We run our tests' },
+            { text: 'We return the UI to its starting state' },
+          ],
         },
         {
           type: 'paragraph',
-          text: 'As of writing this doc, we do not enforce TDD, or test-driven development. We follow something closer to BDD, or behavior-driven development. We refine user stories and acceptance criteria for all our tasks as tickets in JIRA.',
-        },
-        {
-          type: 'paragraph',
-          text: 'Our test cases help us ensure that these requirements are maintained as code changes.',
-        },
-        {
-          type: 'paragraph',
-          text: 'An important note is that generally we should not alter or remove test cases unless there was a requirement change or the logic being tested has been removed from the application.',
+          text: 'The app ideally should be returned to a state that will allow whatever following test cases can run unencumbered.'
         },
       ],
     },
