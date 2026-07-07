@@ -216,6 +216,80 @@ export class WritingComponent {
         },
         {
           type: 'heading',
+          text: 'Integration',
+        },
+        {
+          type: 'paragraph',
+          text: 'The purpose of Integration tests is to test that different Units (as we defined in the Units section) are functioning correctly when used together. This could look a few different ways. It could be an end-to-end integration where we test the data is being transformed as expected when sent from the database to the API and then to the front-end application. It could be a component integration where we test the same thing but only between different components within the same front-end or back-end application.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Currently on our team, we use Integration tests sparingly. They can be fragile since they need to be updated whenever the logic being validated has been updated and they touch a wider set of logic than Unit tests. They also depend on the code and data directly unlike E2E tests which depend only on the UI of the app. Our team has found that E2E tests combined with Unit tests cover much of the same ground as Integration tests but there are still scenarios where they can be valuable.',
+        },
+        {
+          type: 'paragraph',
+          text: 'You would want to use an integration test over another type of test when the risk is how different Units are working together. If individual Units work correctly alone but sometimes break when running as part of a workflow, then that would be a good case for an Integration Test. If a Unit Test for something would require so much mocking that it barely resembles the actual usage, then an Integration Test might be better.',
+        },
+        {
+          type: 'heading',
+          text: 'Example',
+        },
+        {
+          type: 'paragraph',
+          text: 'Here is a simplified version of a snippet of code from an integration test in one of our APIs.',
+        },
+        {
+          type: 'code',
+          language: 'TypeScript',
+          caption: 'Integration test for local adjustments',
+          text: `describe('buildRows with local adjustments', () => {
+  it('applies a local sales adjustment before returning the final row', () => {
+    // Arrange: raw inputs from different parts of the flow
+    const metrics = [
+      { brand: 'BrandA', tySalesDollars: 1000 },
+    ];
+
+    const localAdjustments = [
+      {
+        primaryBrandOrVendor: 'BrandA',
+        prop: 'tyTotalSalesDollars',
+        value: 1500,
+      },
+    ];
+
+    // Imagine buildRows does two real things:
+    // 1. creates rows from metrics
+    // 2. applies local adjustments before returning
+    const result = buildRows({
+      metrics,
+      localAdjustments,
+    });
+
+    // Assert: final row includes the adjusted value
+    expect(result.rows).toEqual([
+      {
+        type: 'primary',
+        primaryBrandOrVendorName: 'BrandA',
+        tyTotalSalesDollars: 1500,
+      },
+    ]);
+  });
+});`,
+        },
+        {
+          type: 'paragraph',
+          text: 'In our front-end application, users can make adjustments to the numbers in a table. These changes are only visible to them and are stored in their web browser’s local storage. Here, if the user edits the TY Total Sales Dollars, then other metrics that use that metric also have to be calculated using this edited value. To do this, the front-end includes this number in its request for all the values for that row in the table from the API.',
+        },
+        {
+          type: 'paragraph',
+          text: 'This test makes sure that when a row is built, the local adjusted value that was given is actually used for the row. Here we could create additional test cases to make sure that any metrics that use TY Total Sales Dollars in their calculation are using the local adjusted value as well.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Tests like these validate that going forward this business logic is preserved and any change would require us to see this test when it fails and either opt in to changing the logic or recognize that it was changed by mistake and correct it.',
+        },
+        {
+          type: 'heading',
           text: 'End-to-End',
         },
         {
