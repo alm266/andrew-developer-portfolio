@@ -24,11 +24,11 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The goal of our test suite is to ensure that the behavior of our applications and APIs stays consistent and intentional as they evolve. Tests provide a layer of protection so updates to our code do not alter other logic as an unintended side effect.',
+          text: 'The goal of our test suite is to ensure that the behavior of our applications and APIs stays consistent and we avoid regressions as they evolve. Tests provide a layer of protection so updates to our code do not alter other logic as an unintended side effect.',
         },
         {
           type: 'paragraph',
-          text: 'It is unrealistic for any developer to remember every decision, flow of logic, or edge case in an app. You can think of test cases as a checklist of expected outcomes for an application.',
+          text: 'It is unrealistic for any developer to remember every decision, logic path, or edge case in an app. You can think of test cases as a checklist of expected outcomes for an application.',
         },
         {
           type: 'heading',
@@ -52,7 +52,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'As of writing this doc, we do not enforce TDD, or test-driven development. We follow something closer to BDD, or behavior-driven development. We refine user stories and acceptance criteria for all our tasks as tickets in JIRA.',
+          text: 'As of writing this article, we do not enforce TDD, or test-driven development. We follow something closer to BDD, or behavior-driven development. We refine user stories and acceptance criteria for all our tasks before recording and tracking all progress in a JIRA tickets.',
         },
         {
           type: 'paragraph',
@@ -60,7 +60,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'An important note is that generally we should not alter or remove test cases unless there was a requirement change or the logic being tested has been removed from the application.',
+          text: 'Generally we should not alter or remove test cases unless there was a requirement change or the logic being tested has been removed from the application.',
         },
         {
           type: 'heading',
@@ -68,7 +68,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Unit tests focus on testing and validating one distinct unit of a codebase. That unit is often one focused piece of logic that can be exercised independently.',
+          text: 'Unit tests focus on validating one distinct unit of a codebase. That unit is often one focused piece of logic that can be exercised independently.',
         },
         {
           type: 'list',
@@ -96,7 +96,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Let us say we have a ticket whose requirements involve displaying dollar values in a particular format in our application. We refine the following user story and acceptance criteria with our business partners.',
+          text: 'Let\'s say we have a ticket whose requirements involve displaying dollar values in a particular format in our application. We refine the following user story and acceptance criteria with our business partners.',
         },
         {
           type: 'heading',
@@ -108,7 +108,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'When I want to see all values in the Dollars column always have 2 decimal places, commas every 3 whole number digits and a $ symbol on the far left'
+          text: 'When I view the Dollars column, I want every value to show two decimal places, commas every three whole-number digits, and a dollar sign on the far left.'
         },
         {
           type: 'paragraph',
@@ -135,7 +135,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Here we have the function signature.',
+          text: 'Here is the function signature.',
         },
         {
           type: 'code',
@@ -151,7 +151,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Since we have three acceptance criteria, I will start with three test cases to cover those basics. For Jasmine/Karma and Jest, the syntax is very similar, so this test approach should apply to either setup.',
+          text: 'Since we have three acceptance criteria, we will start with three test cases to cover those basics. For Jasmine/Karma and Jest, the syntax is very similar, so this test approach should apply to either setup.',
         },
         {
           type: 'code',
@@ -220,15 +220,15 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The purpose of integration tests is to test that different units (as we defined in the Unit section) are functioning correctly when used together. This could look a few different ways. It could be an end-to-end integration where we test the data is being transformed as expected when sent from the database to the API and then to the front-end application. It could be a component integration where we test the same thing but only between different components within the same front-end or back-end application.',
+          text: 'The purpose of integration tests is to test that different units (as we defined in the Unit section) are functioning correctly when used together. In practice, integration tests can validate different kinds of connections between units. It could be an end-to-end integration where we test that the data is being transformed as expected when sent from the database to the API and then to the front-end application. It could be a component integration where we test the same thing but only between different components within the same front-end or back-end application.',
         },
         {
           type: 'paragraph',
-          text: 'Currently on our team, we use integration tests sparingly. They can be fragile since they need to be updated whenever the logic being validated has been updated and they touch a wider set of logic than unit tests. They also depend on the code and data directly unlike E2E tests which depend only on the UI of the app. Our team has found that E2E tests combined with unit tests cover much of the same ground as integration tests but there are still scenarios where they can be valuable.',
+          text: 'Currently, our team uses integration tests sparingly. They can be fragile since they need to be updated whenever the logic being validated has also been updated. They touch a wider set of logic than unit tests. They also depend on the code and data directly, unlike E2E tests which depend only on the UI of the app. Our team has found that E2E tests combined with unit tests cover much of the same ground as integration tests, but there are still scenarios where they can be valuable.',
         },
         {
           type: 'paragraph',
-          text: 'You would want to use an integration test over another type of test when the risk is how different units are working together. If individual units work correctly alone but sometimes break when running as part of a workflow, then that would be a good case for an integration test. If a unit test for something would require so much mocking that it barely resembles the actual usage, then an integration test might be better.',
+          text: 'You would want to use an integration test over another type of test when there is risk in the way that different units are working together. If individual units work correctly alone but sometimes break when running as part of a workflow, then that would be a good case for an integration test. If a unit test for something would require so much mocking that it barely resembles the actual usage, then an integration test might be better.',
         },
         {
           type: 'heading',
@@ -278,7 +278,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'In our front-end application, users can make adjustments to the numbers in a table. These changes are only visible to them and are stored in their web browser’s local storage. Here, if the user edits the TY Total Sales Dollars, then other metrics that use that metric also have to be calculated using this edited value. To do this, the front-end includes this number in its request for all the values for that row in the table from the API.',
+          text: 'In our front-end application, users can make adjustments to the numbers in a table. These changes are only visible to them and are stored in their web browser\'s local storage. Here, if the user edits the TY Total Sales Dollars, then other metrics that use that metric also have to be calculated using this edited value. To do this, the front-end includes this number in its request for all the values for that row in the table from the API.',
         },
         {
           type: 'paragraph',
@@ -286,7 +286,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Tests like these validate that going forward this business logic is preserved and any change would require us to see this test when it fails and either opt in to changing the logic or recognize that it was changed by mistake and correct it.',
+          text: 'Tests like these validate that, going forward, this business logic is preserved and any change would require us to notice the failing test and either opt in to changing the logic or recognize that it was changed by mistake and correct it.',
         },
         {
           type: 'heading',
@@ -294,11 +294,11 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'End-to-End tests focus on testing and validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.'
+          text: 'End-to-End tests focus on validating things at a feature level. This is typically accomplished by creating automated scripts that interact with the front-end application the same way a user would.'
         },
         {
           type: 'paragraph',
-          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (Dev & Test) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in the lower environments will be promoted up to production.'
+          text: 'Although it is possible to mock certain dependencies, our team\'s approach is typically not to do so and instead to do all tests in the lower environments (Dev & Test) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in the lower environments will be promoted up to production.'
         },
         {
           type: 'paragraph',
@@ -306,11 +306,11 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The strength of E2E tests is that they can test applications at a high level and are less focused on the specifics of how the logic gets there and should be less fragile than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.'
+          text: 'The strength of E2E tests is that they can validate applications at a high level and they are less focused on the specifics of how the logic gets there meaning they are less coupled to the implementation details than unit tests. They are great for testing button clicks, page changes and other complex UI interactions.'
         },
         {
           type: 'paragraph',
-          text: 'On the flip side, they are not usually great for validating numbers and complex calculations. The reason for this is because E2E tests are slow to run especially compared to unit tests which are much better suited to . You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.'
+          text: 'On the flip side, they are not usually great for validating numbers and complex calculations. This is because E2E tests are slow to run, especially compared to unit tests which are much better suited to validating code logic. You have to interact with the UI and then wait for it to finish reacting. They can also be flaky when there is rounding or truncating of decimals in the front-end code at any point in the logic.'
         },
         {
           type: 'heading',
@@ -318,14 +318,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'I will use the sidebar in one of our applications as an example of something we might test. Below is a screenshot from the application. You can see on the left hand side there is a black sidebar that contains various buttons and UI pieces. We are going to focus on the X button on the right side.',
-        },
-        {
-          type: 'media',
-          media: {
-            src: 'assets/docs-media/sidebar-button.png',
-            alt: 'x button for closing side bar menu.'
-          }
+          text: 'I will use the sidebar in one of our applications as an example of something we might test. Below is a screenshot from the application. You can see on the left-hand side there is a black sidebar that contains various buttons and UI pieces. We are going to focus on the X button on the right side.',
         },
         {
           type: 'paragraph',
@@ -342,7 +335,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Most test cases function by using what is referred to as Selectors to grab an HTML element in our app and then check its state based on the CSS classes attached to it. The following is what the code for testing this interaction might look like in Cypress:'
+          text: 'Most test cases function by using selectors to grab an HTML element in our app and then check its state based on the CSS classes attached to it. The following is what the code for testing this interaction might look like in Cypress:'
         },
         {
           type: 'code',
@@ -398,7 +391,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The app ideally should be returned to a state that will allow whatever following test cases can run unencumbered.'
+          text: 'The app ideally should be returned to a state that will allow the following test cases to run unencumbered.'
         },
       ],
     },
