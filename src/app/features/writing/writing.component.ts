@@ -41,9 +41,9 @@ export class WritingComponent {
         {
           type: 'list',
           items: [
-            { text: 'Unit tests' },
+            { text: 'unit tests' },
             { text: 'End-to-end tests' },
-            { text: 'Integration tests' },
+            { text: 'integration tests' },
           ],
         },
         {
@@ -220,15 +220,15 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The purpose of Integration tests is to test that different Units (as we defined in the Units section) are functioning correctly when used together. This could look a few different ways. It could be an end-to-end integration where we test the data is being transformed as expected when sent from the database to the API and then to the front-end application. It could be a component integration where we test the same thing but only between different components within the same front-end or back-end application.',
+          text: 'The purpose of integration tests is to test that different units (as we defined in the Unit section) are functioning correctly when used together. This could look a few different ways. It could be an end-to-end integration where we test the data is being transformed as expected when sent from the database to the API and then to the front-end application. It could be a component integration where we test the same thing but only between different components within the same front-end or back-end application.',
         },
         {
           type: 'paragraph',
-          text: 'Currently on our team, we use Integration tests sparingly. They can be fragile since they need to be updated whenever the logic being validated has been updated and they touch a wider set of logic than Unit tests. They also depend on the code and data directly unlike E2E tests which depend only on the UI of the app. Our team has found that E2E tests combined with Unit tests cover much of the same ground as Integration tests but there are still scenarios where they can be valuable.',
+          text: 'Currently on our team, we use integration tests sparingly. They can be fragile since they need to be updated whenever the logic being validated has been updated and they touch a wider set of logic than unit tests. They also depend on the code and data directly unlike E2E tests which depend only on the UI of the app. Our team has found that E2E tests combined with unit tests cover much of the same ground as integration tests but there are still scenarios where they can be valuable.',
         },
         {
           type: 'paragraph',
-          text: 'You would want to use an integration test over another type of test when the risk is how different Units are working together. If individual Units work correctly alone but sometimes break when running as part of a workflow, then that would be a good case for an Integration Test. If a Unit Test for something would require so much mocking that it barely resembles the actual usage, then an Integration Test might be better.',
+          text: 'You would want to use an integration test over another type of test when the risk is how different units are working together. If individual units work correctly alone but sometimes break when running as part of a workflow, then that would be a good case for an integration test. If a unit test for something would require so much mocking that it barely resembles the actual usage, then an integration test might be better.',
         },
         {
           type: 'heading',
@@ -298,7 +298,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (Dev & Test) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in the lower environments will be promoted up to Production.'
+          text: 'Although it is possible to mock certain dependencies, our team’s approach is typically not to do so and instead to do all tests in the lower environments (Dev & Test) to avoid changing anything that could impact our business users. As long as we follow our trunk-based development pattern, only things that pass all tests in the lower environments will be promoted up to production.'
         },
         {
           type: 'paragraph',
@@ -359,7 +359,7 @@ export class WritingComponent {
 	const sidebarDisplayButton = '[data-cy="sidebar-btn"]';
 	const sidebarDrawer = '[data-cy=sidebar-drawer]';
  
-	// Sidebar drawer should be intially open
+	// Sidebar drawer should be initially open
 	cy.get(sidebarDrawer).should('have.class', 'mat-drawer-opened');
  
 	// Sidebar drawer should collapse when button is clicked
@@ -391,7 +391,7 @@ export class WritingComponent {
           type: 'list',
           ordered: true,
           items: [
-            { text: 'We validate our starting state is setup a certain way' },
+            { text: 'We validate our starting state is set up a certain way' },
             { text: 'We run our tests' },
             { text: 'We return the UI to its starting state' },
           ],
