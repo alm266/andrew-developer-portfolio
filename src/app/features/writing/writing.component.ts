@@ -393,6 +393,14 @@ export class WritingComponent {
           type: 'paragraph',
           text: 'The app ideally should be returned to a state that will allow the following test cases to run unencumbered.'
         },
+        {
+          type: 'heading',
+          text: 'Conclusion',
+        },
+        {
+          type: 'paragraph',
+          text: 'The purpose of any test is to give us confidence that our software behaves the way we expect under different conditions. Different types of tests give us that confidence in different ways. Unit tests are concise tests that protect against regressions at a low level, usually around a function, class, or service. Integration tests validate that separate pieces of software behave as expected when they work together, not just when they run in isolation. E2E tests are useful for protecting user workflows because they simulate the way a user interacts with the application’s UI. The goal of our test suite is to call attention to changes in application behavior so engineers can decide whether the change is expected or an unintended regression. We do not need to use every type of test for every change. Instead, we want to choose the tests that give us meaningful confidence in the scenarios we expect the code to handle.',
+        },
       ],
     },
   ];
