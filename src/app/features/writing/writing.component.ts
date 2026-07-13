@@ -403,6 +403,263 @@ export class WritingComponent {
         },
       ],
     },
+    {
+      eyebrow: 'Runbook Sample',
+      title: 'Batch Job Runbook',
+      summary:
+        'A sanitized sample runbook for setting up, troubleshooting, configuring, scheduling, documenting, and promoting batch jobs.',
+      linkLabel: 'Batch Job Runbook',
+      tags: ['Documentation', 'Developer Education', 'Runbook', 'Internal Tools'],
+      content: [
+        {
+          type: 'heading',
+          text: 'Setup',
+        },
+        {
+          type: 'paragraph',
+          text: 'There are three versions of the Java application you will need the following executables:',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'DEV - This is where you would create and test a new job' },
+            { text: 'UAT - This is where testing is done before a job is promoted to production' },
+            { text: 'PROD - This is connected to the production server' },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'DEV is where most of your actual work will be done in the batch job runner',
+        },
+        {
+          type: 'paragraph',
+          text: 'Work with the operations team in order to get your job promoted to production.',
+        },
+        {
+          type: 'paragraph',
+          text: 'You will need the following to access the batch job runner:',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Confirm you have access to the batch job runner' },
+            { text: 'You must have Java installed' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Troubleshooting',
+        },
+        {
+          type: 'paragraph',
+          text: 'I ran into a few issues when first trying to get the batch job runner to work from my machine so I listed them here in case anyone also encounters them. Hopefully this will prevent you from spending the hours I had trying to figure out what was wrong.',
+        },
+        {
+          type: 'list',
+          ordered: true,
+          items: [
+            {
+              text: 'Check that any file paths are absolute rather than relative paths. This means any path in an .env file or that is hardcoded needs to have the full path from the root directory. This is because the batch job runner always starts from the root when checking paths on the servers.',
+            },
+            {
+              text: 'Make sure that after pulling down code from git or updating files in a directory on our servers, be sure to update the execution permissions for the main script. You can do this with the following command: chmod +x{script name}',
+            },
+            {
+              text: 'In any python3 scripts, be sure to include this as the first line in your script or it may fail to run correctly: #!/usr/bin/python3',
+            },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Jobs',
+        },
+        {
+          type: 'paragraph',
+          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts that live on our on-prem machines. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
+        },
+        {
+          type: 'paragraph',
+          text: 'You can open the list of Jobs by going to Development > Jobs',
+        },
+        {
+          type: 'paragraph',
+          text: 'Select the application group for your team or project. This will then show a list of jobs we have saved under it. You can choose to edit one of the existing jobs or create a new job.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Either way, a new window will open up with several tabs and options for configuring the job. I will mostly focus on the ones that are most relevant.',
+        },
+        {
+          type: 'heading',
+          text: 'General',
+        },
+        {
+          type: 'paragraph',
+          text: 'The General tab has several options for setting up a job.',
+        },
+        {
+          type: 'heading',
+          text: 'Name',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'What you called it when you created it in the Jobs Selector' },
+            {
+              text: 'If you plan to promote this job to PROD, make sure not to prepend something like DEV to the name because the name cannot be changed when it is promoted to other environments.',
+            },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Description',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Defaults to the name. Please add a brief description so others know what the purpose of this job is' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Application',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Same as the one selected in the Jobs Selector' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Agent/Agent Group',
+        },
+        {
+          type: 'list',
+          items: [
+            {
+              text: 'This is the group of machines that are running the batch runner software. When the job is promoted to PROD it will run on the production server.',
+            },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Queue',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'A set of jobs waiting to be run' },
+            { text: 'Queues can be toggled on and off when needed' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Library',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'This is the directory for the files that are needed to run this job' },
+            { text: 'For batch job runner DEV this is pointing at the development server' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Program Name',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'This is the file path to the script that is run from the development server' },
+            {
+              text: 'This is where you want to make sure the file you select has the correct execution permissions set as I shared in the Troubleshooting section earlier',
+            },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Execution Options',
+        },
+        {
+          type: 'heading',
+          text: 'Notification',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'You can define types of exceptions that can occur in the script and set different messages that will be sent for each one' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Primary Login ID',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Make sure the batch job runner has the same permissions as a non-admin user on our server' },
+            { text: 'Again make sure that the script has the correct execution permissions' },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: "There are some other options on this tab but you don't need to worry about them for the time being.",
+        },
+        {
+          type: 'heading',
+          text: 'Schedule',
+        },
+        {
+          type: 'paragraph',
+          text: 'You can set a schedule for when a job should run. This allows you to select the days of the week as well as the dates for the beginning and end of the schedule. The end date has a default that you should leave alone unless you have a reason to make it end earlier.',
+        },
+        {
+          type: 'paragraph',
+          text: "You can use the Exceptions tab to define days where it should break the schedule for things like holidays or other days that offices are closed and the job doesn't need to run.",
+        },
+        {
+          type: 'heading',
+          text: 'Prompts',
+        },
+        {
+          type: 'paragraph',
+          text: 'The Prompts tab can be used to define parameters or flags you would normally type into the command line when executing a script manually.',
+        },
+        {
+          type: 'heading',
+          text: 'Documentation',
+        },
+        {
+          type: 'paragraph',
+          text: 'At a minimum, this needs to have contact information for the team that owns the job so that the operations team knows who to contact when a job fails or throws an exception. Not having at least that info will prevent the job from being promoted to PROD so please include it.',
+        },
+        {
+          type: 'heading',
+          text: 'Promoting to Production',
+        },
+        {
+          type: 'paragraph',
+          text: 'In order to promote a job from TEST to PROD, you must contact the operations team and let them know you are looking to do so. You will want to include the names of the jobs you are promoting as he will need to add them to the master list of approved jobs list in our system.',
+        },
+        {
+          type: 'paragraph',
+          text: 'You also will need to create the required change-management tickets and approvals.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Here is a short checklist of things that should be handled before promoting to production:',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Add job to list of approved jobs list in production' },
+            { text: 'Set permissions for the file being run on the server. It should show as green in the terminal' },
+            { text: 'Add the required interpreter comment to the top of any Python 3 file' },
+          ],
+        },
+      ],
+    },
   ];
 
   readonly tableOfContentsItems: ArticleTocItem[] = this.articles.map((article, index) => ({
