@@ -417,7 +417,39 @@ export class WritingComponent {
         },
         {
           type: 'heading',
-          text: 'Setup',
+          text: 'Who This Is For',
+        },
+        {
+          type: 'paragraph',
+          text: 'This runbook is intended for developers who need to create or update scheduled batch jobs using an internal batch job runner. It assumes the reader has access to the tool, a script ready to run, and basic familiarity with the development and production environments.',
+        },
+        {
+          type: 'heading',
+          text: "What You'll Accomplish",
+        },
+        {
+          type: 'paragraph',
+          text: 'By the end of this runbook, a developer should understand how to configure a batch job, troubleshoot common setup issues, define scheduling behavior, document ownership, and prepare the job for production promotion.',
+        },
+        {
+          type: 'heading',
+          text: 'Prerequisites',
+        },
+        {
+          type: 'paragraph',
+          text: 'You will need the following to access the batch job runner:',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Confirm you have access to the batch job runner' },
+            { text: 'Confirm you have Java installed on your computer' },
+            { text: 'Confirm you have access to remote into our DEV server' },
+          ],
+        },
+        {
+          type: 'heading',
+          text: 'Environments',
         },
         {
           type: 'paragraph',
@@ -440,23 +472,12 @@ export class WritingComponent {
           text: 'Work with the operations team to get your job promoted to production.',
         },
         {
-          type: 'paragraph',
-          text: 'You will need the following to access the batch job runner:',
-        },
-        {
-          type: 'list',
-          items: [
-            { text: 'Confirm you have access to the batch job runner' },
-            { text: 'You must have Java installed' },
-          ],
-        },
-        {
           type: 'heading',
           text: 'Troubleshooting',
         },
         {
           type: 'paragraph',
-          text: 'I ran into a few issues during setup so I listed them here in case anyone also encounters them. Hopefully this will prevent you from spending the hours I had trying to figure out what was wrong.',
+          text: 'The following issues came up during setup and are worth checking first.',
         },
         {
           type: 'list',
@@ -479,7 +500,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts that live on our servers. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
+          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts hosted on the server. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
         },
         {
           type: 'paragraph',
@@ -502,7 +523,7 @@ export class WritingComponent {
           text: 'The General tab has several options for setting up a job.',
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Name',
         },
         {
@@ -515,7 +536,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Description',
         },
         {
@@ -525,7 +546,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Application',
         },
         {
@@ -535,7 +556,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Agent/Agent Group',
         },
         {
@@ -547,7 +568,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Queue',
         },
         {
@@ -558,7 +579,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Library',
         },
         {
@@ -569,7 +590,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Program Name',
         },
         {
@@ -586,7 +607,7 @@ export class WritingComponent {
           text: 'Execution Options',
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Notification',
         },
         {
@@ -596,7 +617,7 @@ export class WritingComponent {
           ],
         },
         {
-          type: 'heading',
+          type: 'subheading',
           text: 'Primary Login ID',
         },
         {
@@ -640,6 +661,18 @@ export class WritingComponent {
         },
         {
           type: 'heading',
+          text: 'Validation',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'Run the batch job manually' },
+            { text: 'Remote into the server and check your script logs to confirm that it ran to completion' },
+            { text: 'Intentionally throw an exception in your script and confirm that an email is sent to the correct address with the error log' },
+          ],
+        },
+        {
+          type: 'heading',
           text: 'Promoting to Production',
         },
         {
@@ -661,6 +694,30 @@ export class WritingComponent {
             { text: 'Set permissions for the file being run on the server. It should show as green in the terminal' },
             { text: 'Add the required interpreter comment to the top of any Python 3 file' },
           ],
+        },
+        {
+          type: 'heading',
+          text: 'Final Checklist',
+        },
+        {
+          type: 'paragraph',
+          text: 'Before you consider the job ready, confirm the following:',
+        },
+        {
+          type: 'list',
+          items: [
+            { text: 'The script path uses an absolute path.' },
+            { text: 'The script has the required execution permissions.' },
+            { text: 'The job has a clear description.' },
+            { text: 'The job has the correct schedule and exceptions.' },
+            { text: 'Any prompts or parameters are configured.' },
+            { text: 'The owning team or contact information is documented.' },
+            { text: 'Production approval requirements are complete.' },
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'The production version cannot be edited without going through the operations team again. Once you have configured, validated, and documented your job, it is ready for regular use.'
         },
       ],
     },
