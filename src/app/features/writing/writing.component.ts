@@ -444,7 +444,7 @@ export class WritingComponent {
           items: [
             { text: 'Confirm you have access to the batch job runner' },
             { text: 'Confirm you have Java installed on your computer' },
-            { text: 'Confirm you have access to remote into our DEV server' },
+            { text: 'Confirm you have access to remote into the DEV server' },
           ],
         },
         {
@@ -459,7 +459,7 @@ export class WritingComponent {
           type: 'list',
           items: [
             { text: 'DEV - This is where you would create and test a new job' },
-            { text: 'UAT - This is where testing is done before a job is promoted to production' },
+            { text: 'TEST - This is where testing is done before a job is promoted to production' },
             { text: 'PROD - This is connected to the production server' },
           ],
         },
@@ -500,7 +500,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts hosted on the server. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
+          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts hosted on the server. Whenever they run into errors, the output is sent to the operations team, which then forwards it to whoever is the documented email address on the job.',
         },
         {
           type: 'paragraph',
@@ -529,7 +529,7 @@ export class WritingComponent {
         {
           type: 'list',
           items: [
-            { text: 'What you called it when you created it in the job selector' },
+            { text: 'Again make sure when you created it in the job selector' },
             {
               text: 'If you plan to promote this job to PROD, make sure not to prepend something like DEV to the name because the name cannot be changed when it is promoted to other environments.',
             },
@@ -677,7 +677,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'In order to promote a job from TEST to PROD, you must contact the operations team and let them know you are looking to do so. You will want to include the names of the jobs you are promoting as they will need to add them to the approved jobs list in our system.',
+          text: 'To promote a job from TEST to PROD, you must contact the operations team and let them know you are looking to do so. You will want to include the names of the jobs you are promoting as they will need to add them to the approved jobs list in our system.',
         },
         {
           type: 'paragraph',
@@ -717,7 +717,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'The production version cannot be edited without going through the operations team again. Once you have configured, validated, and documented your job, it is ready for regular use.'
+          text: 'The production version cannot be edited without going through the operations team again. Once the job has been configured, validated, and documented, it is ready for regular use.'
         },
       ],
     },
