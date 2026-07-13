@@ -417,7 +417,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'There are three versions of the Java application you will need the following executables:',
+          text: 'There are three versions of the Java application you will use:',
         },
         {
           type: 'list',
@@ -429,11 +429,11 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'DEV is where most of your actual work will be done in the batch job runner',
+          text: 'DEV is where most of your actual work will be done in the batch job runner.',
         },
         {
           type: 'paragraph',
-          text: 'Work with the operations team in order to get your job promoted to production.',
+          text: 'Work with the operations team to get your job promoted to production.',
         },
         {
           type: 'paragraph',
@@ -452,7 +452,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'I ran into a few issues when first trying to get the batch job runner to work from my machine so I listed them here in case anyone also encounters them. Hopefully this will prevent you from spending the hours I had trying to figure out what was wrong.',
+          text: 'I ran into a few issues during setup so I listed them here in case anyone also encounters them. Hopefully this will prevent you from spending the hours I had trying to figure out what was wrong.',
         },
         {
           type: 'list',
@@ -462,7 +462,7 @@ export class WritingComponent {
               text: 'Check that any file paths are absolute rather than relative paths. This means any path in an .env file or that is hardcoded needs to have the full path from the root directory. This is because the batch job runner always starts from the root when checking paths on the servers.',
             },
             {
-              text: 'Make sure that after pulling down code from git or updating files in a directory on our servers, be sure to update the execution permissions for the main script. You can do this with the following command: chmod +x{script name}',
+              text: 'Make sure that after pulling down code from git or updating files in a directory on the server, be sure to update the execution permissions for the main script. You can do this with the following command: chmod +x{script name}',
             },
             {
               text: 'In any python3 scripts, be sure to include this as the first line in your script or it may fail to run correctly: #!/usr/bin/python3',
@@ -504,7 +504,7 @@ export class WritingComponent {
         {
           type: 'list',
           items: [
-            { text: 'What you called it when you created it in the Jobs Selector' },
+            { text: 'What you called it when you created it in the job selector' },
             {
               text: 'If you plan to promote this job to PROD, make sure not to prepend something like DEV to the name because the name cannot be changed when it is promoted to other environments.',
             },
@@ -527,7 +527,7 @@ export class WritingComponent {
         {
           type: 'list',
           items: [
-            { text: 'Same as the one selected in the Jobs Selector' },
+            { text: 'Same as the one selected in the job selector' },
           ],
         },
         {
@@ -640,7 +640,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'In order to promote a job from TEST to PROD, you must contact the operations team and let them know you are looking to do so. You will want to include the names of the jobs you are promoting as he will need to add them to the master list of approved jobs list in our system.',
+          text: 'In order to promote a job from TEST to PROD, you must contact the operations team and let them know you are looking to do so. You will want to include the names of the jobs you are promoting as they will need to add them to the approved jobs list in our system.',
         },
         {
           type: 'paragraph',
@@ -653,7 +653,7 @@ export class WritingComponent {
         {
           type: 'list',
           items: [
-            { text: 'Add job to list of approved jobs list in production' },
+            { text: 'Add job to approved jobs list in production' },
             { text: 'Set permissions for the file being run on the server. It should show as green in the terminal' },
             { text: 'Add the required interpreter comment to the top of any Python 3 file' },
           ],
