@@ -19,6 +19,8 @@
 
       <h4 *ngIf="block.type === 'heading' && block.text">{{ block.text }}</h4>
 
+      <p class="article-card__subheading" *ngIf="block.type === 'subheading' && block.text">{{ block.text }}</p>
+
       <ng-container *ngIf="block.type === 'list' && block.items?.length">
         <ol class="article-card__list" *ngIf="block.ordered; else unorderedList">
           <li *ngFor="let item of block.items">

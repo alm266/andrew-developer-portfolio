@@ -18,7 +18,7 @@ export interface ArticleListItem {
 }
 
 export interface ArticleBlock {
-  type: 'paragraph' | 'media' | 'heading' | 'code' | 'list';
+  type: 'paragraph' | 'media' | 'heading' | 'subheading' | 'code' | 'list';
   text?: string;
   parts?: ArticleTextPart[];
   items?: ArticleListItem[];

@@ -68,6 +68,15 @@
   line-height: 1.35;
 }
 
+.article-card__subheading {
+  width: min(100%, 680px);
+  margin: 4px 0 -16px;
+  color: #181816;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .article-card__media {
   width: 100%;
   margin: 10px 0;
