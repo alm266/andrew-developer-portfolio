@@ -412,6 +412,10 @@ export class WritingComponent {
       tags: ['Documentation', 'Developer Education', 'Runbook', 'Internal Tools'],
       content: [
         {
+          type: 'paragraph',
+          text: 'This is a fictionalized sample runbook based on internal developer documentation. Tool names, environment details, commands, and approval steps have been generalized.',
+        },
+        {
           type: 'heading',
           text: 'Setup',
         },
@@ -475,7 +479,7 @@ export class WritingComponent {
         },
         {
           type: 'paragraph',
-          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts that live on our on-prem machines. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
+          text: 'Simply put, jobs are tasks or scripts that are automatically run via the batch job runner. Jobs are run from scripts that live on our servers. Whenever they run into errors, the output is sent to the operations team who then forward it to whoever is the documented email address on the job.',
         },
         {
           type: 'paragraph',
