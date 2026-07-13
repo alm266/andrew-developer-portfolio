@@ -18,9 +18,9 @@
 .hero__content {
   position: relative;
   z-index: 1;
-  width: min(100%, 1120px);
-  max-width: 520px;
-  margin-right: max(24px, calc((100vw - 1120px) / 2));
+  width: min(46vw, 720px);
+  max-width: none;
+  margin-right: clamp(24px, 4vw, 72px);
   margin-left: auto;
 }
 
@@ -39,7 +39,7 @@ p {
 }
 
 h1 {
-  max-width: 15ch;
+  max-width: none;
   margin-bottom: 24px;
   color: #fbfaf7;
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -61,7 +61,7 @@ h1 {
   gap: 12px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .hero {
     padding: 56px 20px;
     background-position: center top;
