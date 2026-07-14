@@ -1,0 +1,37 @@
+.system-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 40px 0 0;
+  padding: 36px 28px;
+  background: #181816;
+  color: #fbfaf7;
+  list-style: none;
+}
+
+.system-flow li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.system-flow li > div {
+  min-height: 120px;
+  padding: 0 18px;
+}
+
+.system-flow li:first-child > div { padding-left: 0; }
+.system-flow strong, .system-flow span { display: block; }
+.system-flow strong { margin-bottom: 12px; color: #f1d59d; font-size: .9rem; line-height: 1.35; }
+.system-flow li div span { color: #d8d4ca; font-family: Ubuntu, Arial, sans-serif; font-size: .85rem; line-height: 1.45; }
+.system-flow__arrow { color: #9b5937; font-size: 1.3rem; }
+
+@media (max-width: 900px) {
+  .system-flow { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+}
+
+@media (max-width: 720px) {
+  .system-flow { grid-template-columns: 1fr; gap: 0; padding: 28px 24px; }
+  .system-flow li { grid-template-columns: 1fr; }
+  .system-flow li > div, .system-flow li:first-child > div { min-height: 0; padding: 0; }
+  .system-flow__arrow { margin: 18px 0; transform: rotate(90deg); transform-origin: center; }
+}

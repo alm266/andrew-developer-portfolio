@@ -9,4 +9,29 @@
       </p>
     </div>
   </section>
+
+  <section class="project-index" aria-labelledby="selected-projects-title">
+    <div class="project-index__intro">
+      <p class="project-index__eyebrow">Selected work</p>
+      <h2 id="selected-projects-title">The decisions behind the implementation.</h2>
+      <p>
+        Project overviews focused on the problem, my contribution, and what changed—not just a list
+        of technologies.
+      </p>
+    </div>
+
+    <div class="project-index__layout">
+      <app-table-of-contents
+        [items]="tableOfContentsItems"
+        ariaLabel="Projects"
+      ></app-table-of-contents>
+
+      <div class="project-index__list">
+        <app-project-feature
+          *ngFor="let project of projects"
+          [project]="project"
+        ></app-project-feature>
+      </div>
+    </div>
+  </section>
 </main>

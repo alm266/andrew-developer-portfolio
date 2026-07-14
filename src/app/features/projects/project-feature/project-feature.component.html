@@ -1,0 +1,88 @@
+<article class="project-feature" [id]="project.id" [attr.aria-labelledby]="project.id + '-title'">
+  <header class="project-feature__header">
+    <p class="project-feature__number" aria-hidden="true">{{ project.number }}</p>
+    <div>
+      <p class="section-label">{{ project.category }}</p>
+      <h2 [id]="project.id + '-title'">{{ project.title }}</h2>
+      <p class="project-feature__summary">{{ project.summary }}</p>
+    </div>
+  </header>
+
+  <dl class="project-facts">
+    <div *ngFor="let fact of project.facts">
+      <dt>{{ fact.label }}</dt>
+      <dd [class.is-placeholder]="fact.isPlaceholder">{{ fact.value }}</dd>
+    </div>
+    <div class="project-facts__tools">
+      <dt>Built with</dt>
+      <dd>
+        <ul class="tool-chips" aria-label="Technologies used">
+          <li *ngFor="let tool of project.tools">{{ tool }}</li>
+        </ul>
+      </dd>
+    </div>
+  </dl>
+
+  <p class="confidentiality-note" *ngIf="project.confidentialityNote">
+    <strong>About this overview</strong>
+    {{ project.confidentialityNote }}
+  </p>
+
+  <div class="project-feature__body">
+    <div class="project-story">
+      <section class="story-section" [id]="sectionId('challenge')">
+        <p class="section-label">01 / Context</p>
+        <h3>The challenge</h3>
+        <p>{{ project.challenge }}</p>
+      </section>
+
+      <section class="story-section" [id]="sectionId('contribution')">
+        <p class="section-label">02 / Ownership</p>
+        <h3>My contribution</h3>
+        <ul class="arrow-list">
+          <li *ngFor="let contribution of project.contribution">{{ contribution }}</li>
+        </ul>
+      </section>
+
+      <section class="story-section" [id]="sectionId('decisions')">
+        <p class="section-label">03 / Product thinking</p>
+        <h3>Key decisions</h3>
+        <ol class="decision-list">
+          <li *ngFor="let decision of project.decisions; let index = index">
+            <span>0{{ index + 1 }}</span>
+            <div>
+              <h4>{{ decision.title }}</h4>
+              <p [class.is-placeholder]="decision.isPlaceholder">{{ decision.description }}</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="story-section" [id]="sectionId('system-view')">
+        <p class="section-label">04 / System view</p>
+        <h3>A simplified collaboration flow</h3>
+        <p>
+          This conceptual view communicates the system story without exposing proprietary
+          architecture or application screens.
+        </p>
+        <app-project-system-flow [steps]="project.flow"></app-project-system-flow>
+      </section>
+
+      <section class="story-section story-section--outcomes" [id]="sectionId('outcomes')">
+        <p class="section-label">05 / Impact</p>
+        <h3>Outcomes</h3>
+        <ul class="arrow-list">
+          <li *ngFor="let outcome of project.outcomes" [class.is-placeholder]="outcome.isPlaceholder">
+            {{ outcome.text }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="story-section story-section--reflection" [id]="sectionId('reflection')">
+        <p class="section-label">06 / Looking back</p>
+        <h3>Reflection</h3>
+        <p [class.is-placeholder]="project.reflectionIsPlaceholder">{{ project.reflection }}</p>
+      </section>
+    </div>
+  </div>
+</article>

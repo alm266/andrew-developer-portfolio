@@ -10,6 +10,8 @@ import { ContactComponent } from './features/contact';
 import { HeroSectionComponent } from './features/home/hero-section/hero-section.component';
 import { HomeComponent } from './features/home/home.component';
 import { ProjectsComponent } from './features/projects';
+import { ProjectFeatureComponent } from './features/projects/project-feature/project-feature.component';
+import { ProjectSystemFlowComponent } from './features/projects/project-system-flow/project-system-flow.component';
 import { EducationSectionComponent } from './features/resume/education-section/education-section.component';
 import { ExperienceCardComponent } from './features/resume/experience-card/experience-card.component';
 import { ExperienceSectionComponent } from './features/resume/experience-section/experience-section.component';
@@ -30,7 +32,9 @@ import { SharedModule } from './shared';
     ExperienceSectionComponent,
     HeroSectionComponent,
     HomeComponent,
+    ProjectFeatureComponent,
     ProjectSectionComponent,
+    ProjectSystemFlowComponent,
     ProjectsComponent,
     ResumeComponent,
     SummarySectionComponent,

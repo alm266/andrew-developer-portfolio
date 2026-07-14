@@ -1,0 +1,9 @@
+<ol class="system-flow" aria-label="Simplified project system flow">
+  <li *ngFor="let step of steps; let last = last">
+    <div>
+      <strong>{{ step.label }}</strong>
+      <span>{{ step.detail }}</span>
+    </div>
+    <span class="system-flow__arrow" *ngIf="!last" aria-hidden="true">→</span>
+  </li>
+</ol>
