@@ -5,6 +5,8 @@
 }
 
 .toc {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   border-left: 2px solid rgba(24, 24, 22, 0.16);
   padding-left: 16px;
 }
@@ -27,6 +29,13 @@
   list-style: none;
 }
 
+.toc .toc__children {
+  gap: 2px;
+  margin: 4px 0 10px 10px;
+  border-left: 1px solid rgba(24, 24, 22, 0.14);
+  padding-left: 8px;
+}
+
 .toc a {
   display: block;
   border-left: 3px solid transparent;
@@ -47,12 +56,21 @@
   outline: 0;
 }
 
+.toc .toc__child-link {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #66625b;
+  font-size: 0.84rem;
+}
+
 @media (max-width: 960px) {
   :host {
     position: static;
   }
 
   .toc {
+    max-height: none;
+    overflow-y: visible;
     border-top: 1px solid rgba(24, 24, 22, 0.14);
     border-left: 0;
     padding-top: 20px;
@@ -63,6 +81,15 @@
     gap: 10px;
   }
 
+  .toc .toc__children {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 14px;
+    border-left: 0;
+    padding-left: 12px;
+  }
+
   .toc a {
     border: 1px solid rgba(86, 156, 214, 0.28);
     border-radius: 999px;
@@ -70,6 +97,11 @@
     background: rgba(86, 156, 214, 0.08);
     color: #2f3f48;
     font-weight: 700;
+  }
+
+  .toc .toc__child-link {
+    padding: 8px 12px;
+    font-size: 0.82rem;
   }
 
   .toc a:hover,

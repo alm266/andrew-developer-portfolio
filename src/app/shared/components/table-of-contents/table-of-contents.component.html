@@ -1,4 +1,4 @@
-<nav class="toc" aria-label="Writing articles">
+<nav class="toc" [attr.aria-label]="ariaLabel">
   <p>Contents</p>
 
   <ol>
@@ -6,6 +6,18 @@
       <a [href]="'#' + item.id" (click)="scrollToArticle($event, item)">
         {{ item.title }}
       </a>
+
+      <ol class="toc__children" *ngIf="item.children?.length">
+        <li *ngFor="let child of item.children">
+          <a
+            class="toc__child-link"
+            [href]="'#' + child.id"
+            (click)="scrollToArticle($event, child)"
+          >
+            {{ child.title }}
+          </a>
+        </li>
+      </ol>
     </li>
   </ol>
 </nav>

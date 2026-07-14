@@ -9,6 +9,7 @@ import { ArticleTocItem } from '../../models/article';
 })
 export class TableOfContentsComponent {
   @Input() items: ArticleTocItem[] = [];
+  @Input() ariaLabel = 'Page contents';
 
   scrollToArticle(event: Event, item: ArticleTocItem): void {
     event.preventDefault();
