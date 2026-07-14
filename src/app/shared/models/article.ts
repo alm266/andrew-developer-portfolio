@@ -43,4 +43,5 @@ export interface Article {
 export interface ArticleTocItem {
   id: string;
   title: string;
+  children?: ArticleTocItem[];
 }
