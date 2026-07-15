@@ -1,0 +1,39 @@
+:host > p {
+  max-width: 720px;
+  color: #3d3c38;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.data-state-list {
+  margin: 40px 0 0;
+  border-block: 1px solid #181816;
+}
+
+.data-state-list div {
+  display: grid;
+  grid-template-columns: minmax(150px, .6fr) minmax(260px, 1.4fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 24px 0;
+  border-top: 1px solid #d8d4ca;
+}
+
+.data-state-list div:first-child { border-top: 0; }
+.data-state-list dt { font-weight: 700; }
+.data-state-list dd { margin: 0; font-family: Ubuntu, Arial, sans-serif; line-height: 1.55; }
+
+.data-state-list__scope {
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: #eef3f1;
+  color: #2f3f48;
+  font-size: .76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .data-state-list div { grid-template-columns: 1fr; gap: 10px; }
+  .data-state-list__scope { justify-self: start; }
+}

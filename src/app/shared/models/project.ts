@@ -15,6 +15,12 @@ export interface ProjectFlowStep {
   detail: string;
 }
 
+export interface ProjectDataState {
+  label: string;
+  scope: string;
+  description: string;
+}
+
 export interface ProjectOutcome {
   text: string;
   isPlaceholder?: boolean;
@@ -31,6 +37,8 @@ export interface Project {
   challenge: string;
   contribution: string[];
   decisions: ProjectDecision[];
+  dataStateIntro?: string;
+  dataStates?: ProjectDataState[];
   flow: ProjectFlowStep[];
   outcomes: ProjectOutcome[];
   reflection: string;

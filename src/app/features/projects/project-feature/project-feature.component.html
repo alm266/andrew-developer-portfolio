@@ -58,8 +58,21 @@
         </ol>
       </section>
 
+      <section
+        class="story-section"
+        *ngIf="project.dataStates?.length"
+        [id]="sectionId('data-states')"
+      >
+        <p class="section-label">04 / Data model</p>
+        <h3>Three states of schedule data</h3>
+        <app-project-data-states
+          [intro]="project.dataStateIntro || ''"
+          [states]="project.dataStates || []"
+        ></app-project-data-states>
+      </section>
+
       <section class="story-section" [id]="sectionId('system-view')">
-        <p class="section-label">04 / System view</p>
+        <p class="section-label">{{ project.dataStates?.length ? '05' : '04' }} / System view</p>
         <h3>A simplified collaboration flow</h3>
         <p>
           This conceptual view communicates the system story without exposing proprietary
@@ -69,7 +82,7 @@
       </section>
 
       <section class="story-section story-section--outcomes" [id]="sectionId('outcomes')">
-        <p class="section-label">05 / Impact</p>
+        <p class="section-label">{{ project.dataStates?.length ? '06' : '05' }} / Impact</p>
         <h3>Outcomes</h3>
         <ul class="arrow-list">
           <li *ngFor="let outcome of project.outcomes" [class.is-placeholder]="outcome.isPlaceholder">
@@ -79,7 +92,7 @@
       </section>
 
       <section class="story-section story-section--reflection" [id]="sectionId('reflection')">
-        <p class="section-label">06 / Looking back</p>
+        <p class="section-label">{{ project.dataStates?.length ? '07' : '06' }} / Looking back</p>
         <h3>Reflection</h3>
         <p [class.is-placeholder]="project.reflectionIsPlaceholder">{{ project.reflection }}</p>
       </section>

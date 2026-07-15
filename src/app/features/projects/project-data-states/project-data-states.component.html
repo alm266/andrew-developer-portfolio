@@ -1,0 +1,9 @@
+<p>{{ intro }}</p>
+
+<dl class="data-state-list">
+  <div *ngFor="let state of states">
+    <dt>{{ state.label }}</dt>
+    <dd>{{ state.description }}</dd>
+    <dd class="data-state-list__scope">{{ state.scope }}</dd>
+  </div>
+</dl>
