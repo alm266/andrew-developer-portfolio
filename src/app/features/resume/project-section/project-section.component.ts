@@ -39,9 +39,9 @@ export class ProjectSectionComponent {
       description:
         'Internal business application for planning which brands to buy and where to source them from for current and future seasons.',
       highlights: [
-        'Built and led the effort to create an end-to-end testing suite with Cypress and TypeScript to prevent regressions after codebase updates.',
-        'Led the project testing effort by writing backend unit and integration tests, beginning the front-end Cypress setup, and collaborating with teammates to complete the E2E coverage.',
-        'Ran weekly production deployments and post-release validation for selected updates, helping confirm releases were working as expected.',
+        'Built and led the effort to create the team’s first end-to-end testing suite with Cypress and TypeScript to prevent regressions after codebase updates.',
+        'Led a testing effort that now includes 80 E2E tests, 244 front-end unit tests, and 280 backend tests comprising 262 unit and 18 integration tests.',
+        'Participated in a rotating schedule for weekly production deployments and supported teammates with post-release validation.',
       ],
       tools: ['Cypress', 'TypeScript', 'CI/CD'],
     },
@@ -54,9 +54,10 @@ export class ProjectSectionComponent {
       highlights: [
         'Built a front-end workflow for merchants to alter and share merchandise release schedules with Angular, TypeScript, and npm libraries.',
         'Created a Socket.IO alert service hosted on company on-prem servers to notify users when teammates updated the same data they were viewing.',
+        'Led the front-end testing effort, establishing 1,007 unit tests across the majority of the front-end codebase while another team owned most backend development.',
         'Enabled business users to manage millions of dollars in merchandise through near real-time schedule updates.',
       ],
-      tools: ['Angular', 'TypeScript', 'Socket.IO', 'On-prem servers', 'npm'],
+      tools: ['Angular', 'TypeScript', 'Socket.IO', 'Unit testing', 'On-prem servers', 'npm'],
     },
     {
       name: 'Order Approval Tool',

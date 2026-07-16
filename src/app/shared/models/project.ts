@@ -39,6 +39,9 @@ export interface Project {
   decisions: ProjectDecision[];
   dataStateIntro?: string;
   dataStates?: ProjectDataState[];
+  flowSectionLabel?: string;
+  flowTitle?: string;
+  flowIntro?: string;
   flow: ProjectFlowStep[];
   outcomes: ProjectOutcome[];
   reflection: string;

@@ -19,7 +19,7 @@ export class ExperienceSectionComponent {
         'Created an Angular, Socket.IO, and Microsoft Azure workflow for managing store shipment timing and sending near real-time updates to teammates.',
         'Built Node.js, Express, JavaScript, SQL, Swagger, and Oracle-backed APIs that support near real-time user and application data for roughly 2,000 internal users.',
         'Designed sales and inventory API contracts with Confluence, TypeScript, and JSON objects, helping the team validate and consume production data within a three-month staged rollout.',
-        'Implemented CI/CD testing practices with Karma, Jasmine, Nose2, Cypress, and GitHub Actions, contributing to an 80% reduction in pilot bugs compared with the prior project without automated testing.',
+        'Led testing efforts across two internal applications, establishing 1,007 front-end unit tests across most of RMT and helping build VBPT’s 604-test suite, including the team’s first 80 Cypress E2E tests.',
         'Support production deployments and release validation for internal tools, helping the team ship updates with more confidence and fewer regressions.',
       ],
     },

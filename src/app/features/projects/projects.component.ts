@@ -24,16 +24,16 @@ export class ProjectsComponent {
         { label: 'Audience', value: 'Internal merchandising teams' },
         {
           label: 'Team',
-          value: '[Placeholder: add team size and your collaborators]',
-          isPlaceholder: true,
+          value: '5-person application team within a 4-team collaboration',
         },
       ],
       challenge:
-        'Merchandising teams needed to alter and share product-release schedules across a business-critical workflow. Because teammates could be looking at related information at the same time, the experience also needed a way to communicate that the underlying data had changed.',
+        'Merchandising teams needed to alter and share product-release schedules across a business-critical workflow. Delivery spanned four teams: a five-person application team built the front end and parts of the backend, the business team owned the product, a data team supplied source data through an API, and another integration team exposed business logic that connected to additional systems. Because teammates could be looking at related information at the same time, the experience also needed a way to communicate that the underlying data had changed.',
       contribution: [
         'Built the front-end workflow for viewing, changing, and sharing merchandise release schedules.',
         'Created a Socket.IO alert service that notified active users when teammates updated the data they were viewing.',
         'Connected interface behavior and near-real-time messaging across an Angular and TypeScript application hosted on company infrastructure.',
+        'Led the front-end testing effort and helped establish unit tests as a meaningful requirement where the team previously had no consistent expectation for them. Most backend development was owned by another team.',
       ],
       decisions: [
         {
@@ -108,10 +108,99 @@ export class ProjectsComponent {
         {
           text: 'Completed or resolved 14 of 27 enhancement requests (52%), while moving 11 requests (41%) into Phase 2 so the rollout could prioritize the most important work.',
         },
+        {
+          text: 'Built a suite of 1,007 front-end unit tests covering the majority of the front-end codebase, supported by beginning automated testing early in development.',
+        },
       ],
       reflection:
         'The pilot reinforced the value of phased rollouts, short feedback loops, cross-functional communication, and training that gives users more than one way to learn. It also exposed the cost of beginning with high-level requirements spread across tickets, spreadsheets, and presentations. Future projects would benefit from a centralized source of truth, clearer requirement traceability, and timelines developed jointly with technical and business stakeholders.',
-      tools: ['Angular', 'TypeScript', 'Socket.IO', 'Internal infrastructure'],
+      tools: ['Angular', 'TypeScript', 'Socket.IO', 'Unit testing', 'Internal infrastructure'],
+    },
+    {
+      id: 'vendor-brand-planning-tool',
+      number: '02',
+      title: 'Vendor Brand Planning Tool',
+      category: 'Quality engineering · Developer experience',
+      summary:
+        'How I expanded the team’s unit-testing foundation by leading its first end-to-end testing effort for a business-critical planning application.',
+      confidentialityNote:
+        'This was an internal business application, so company-specific screens, data, and implementation details are omitted. This overview focuses on the testing strategy, team practices, and delivery process.',
+      facts: [
+        { label: 'Role', value: 'Developer / testing lead' },
+        { label: 'Timeline', value: 'March 2025 – Present' },
+        { label: 'Product', value: 'Internal brand and sourcing planning tool' },
+        {
+          label: 'Team',
+          value: '5–10 developers over time, collaborating across 3 core teams, an external requirements partner, and 2 early executive stakeholders',
+        },
+      ],
+      challenge:
+        'The application helps business users plan which brands to buy and where to source them for current and future seasons. My team built the front end and a backend wrapper API, the business reporting team owned the product, and a data team supplied source data through its API. Early requirements came from two executive stakeholders and artifacts prepared by an external requirements partner. When those executives transitioned off the project, differences emerged between the original direction and the current product owner’s needs. At the same time, the team was extending its unit-testing foundation with its first automated end-to-end workflows, creating a need for requirements that were both traceable and testable.',
+      contribution: [
+        'Built and led the effort to establish the team’s first end-to-end test suite with Cypress and TypeScript.',
+        'Wrote backend unit and integration tests, began the front-end Cypress setup, and collaborated with teammates to complete coverage of important user workflows.',
+        'Participated in a rotating schedule for weekly production deployments and supported teammates with post-release validation.',
+        'Documented the team’s approach to unit, integration, and end-to-end testing so the reasoning behind the suite could be understood and reused.',
+      ],
+      decisions: [
+        {
+          title: 'Translate requirements into testable behavior',
+          description:
+            'Converted direction distributed across stakeholder conversations, presentations, and spreadsheets into refined user stories and acceptance criteria. Connecting tests to those criteria gave the team a shared interpretation of expected behavior and made discrepancies easier to identify.',
+        },
+        {
+          title: 'Reconsider what belongs in an E2E test',
+          description:
+            'Early versions of the Cypress suite used E2E tests to validate many numeric values in tables and the relationships between them. Those tests were difficult to stabilize and initially very flaky. The experience showed that deterministic calculations and numeric relationships are often better protected by focused unit tests, while E2E coverage is more valuable for critical user workflows.',
+        },
+        {
+          title: 'Make testing part of delivery',
+          description:
+            'Combined automated checks in lower environments with a rotating deployment schedule and shared post-release validation so quality was evaluated throughout the release process.',
+        },
+      ],
+      flowSectionLabel: 'Delivery view',
+      flowTitle: 'From requirements to release confidence',
+      flowIntro:
+        'The testing practice connected expected behavior to automated coverage and carried that confidence through deployment and production validation.',
+      flow: [
+        {
+          label: 'Refined requirements',
+          detail: 'User stories and acceptance criteria define the behavior an update must preserve',
+        },
+        {
+          label: 'Layered coverage',
+          detail: 'Unit, integration, and Cypress tests cover logic, system connections, and user workflows',
+        },
+        {
+          label: 'Lower-environment checks',
+          detail: 'Updates are exercised before they can be promoted toward production',
+        },
+        {
+          label: 'Release validation',
+          detail: 'The team rotates weekly deployments and works together to validate selected updates after release',
+        },
+      ],
+      outcomes: [
+        {
+          text: 'Introduced the team’s first project-level end-to-end test suite, expanding on the unit-testing foundation established during RMT.',
+        },
+        {
+          text: 'Established automated protection for backend behavior and important front-end user workflows.',
+        },
+        {
+          text: 'Helped the team share ownership of end-to-end coverage instead of leaving the suite with a single contributor.',
+        },
+        {
+          text: 'Contributed to weekly production releases by taking turns deploying and helping validate selected updates after teammates deployed.',
+        },
+        {
+          text: 'Built a 604-test automated suite: 80 Cypress E2E tests, 244 front-end unit tests, and 280 backend tests comprising 262 unit and 18 integration tests.',
+        },
+      ],
+      reflection:
+        'The E2E suite became valuable, but getting it into a reliable state required more effort than it should have. We initially used Cypress to validate many individual table values and relationships between numbers. Testing those rules through the full interface made the suite difficult to maintain and especially flaky early in development. If I approached the project again, I would move more deterministic calculations and data relationships into faster, focused unit tests and reserve E2E coverage for the critical workflows users complete through the interface. The broader lesson was that test value does not come from exercising behavior at the highest possible level; it comes from choosing the lowest level that provides meaningful confidence. Clear acceptance criteria, direct access to stakeholders, durable product ownership, and a shared source of truth would also make that coverage easier to design correctly.',
+      tools: ['Cypress', 'TypeScript', 'Unit testing', 'Integration testing', 'CI/CD'],
     },
   ];
 

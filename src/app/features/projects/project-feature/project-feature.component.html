@@ -72,11 +72,16 @@
       </section>
 
       <section class="story-section" [id]="sectionId('system-view')">
-        <p class="section-label">{{ project.dataStates?.length ? '05' : '04' }} / System view</p>
-        <h3>A simplified collaboration flow</h3>
+        <p class="section-label">
+          {{ project.dataStates?.length ? '05' : '04' }} /
+          {{ project.flowSectionLabel || 'System view' }}
+        </p>
+        <h3>{{ project.flowTitle || 'A simplified collaboration flow' }}</h3>
         <p>
-          This conceptual view communicates the system story without exposing proprietary
-          architecture or application screens.
+          {{
+            project.flowIntro ||
+              'This conceptual view communicates the system story without exposing proprietary architecture or application screens.'
+          }}
         </p>
         <app-project-system-flow [steps]="project.flow"></app-project-system-flow>
       </section>
