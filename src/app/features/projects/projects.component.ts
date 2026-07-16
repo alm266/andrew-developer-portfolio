@@ -128,7 +128,7 @@ export class ProjectsComponent {
       facts: [
         { label: 'Role', value: 'Developer / testing lead' },
         { label: 'Timeline', value: 'March 2025 – Present' },
-        { label: 'Product', value: 'Internal brand and sourcing planning tool' },
+        { label: 'Audience', value: 'Merchandising Planners' },
         {
           label: 'Team',
           value: '5–10 developers over time, collaborating across 3 core teams, an external requirements partner, and 2 early executive stakeholders',

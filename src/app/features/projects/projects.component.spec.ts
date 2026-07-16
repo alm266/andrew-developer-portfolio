@@ -40,6 +40,7 @@ describe('ProjectsComponent', () => {
     expect(compiled.textContent).toContain('1,007 front-end unit tests');
     expect(compiled.textContent).toContain('604-test automated suite');
     expect(compiled.textContent).toContain('80 Cypress E2E tests');
+    expect(compiled.textContent).toContain('Merchandising Planners');
     expect(compiled.textContent).toContain('5-person application team within a 4-team collaboration');
     expect(compiled.textContent).toContain('5–10 developers over time');
     expect(compiled.textContent).toContain('3 core teams');
