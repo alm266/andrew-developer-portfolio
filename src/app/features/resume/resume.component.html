@@ -17,6 +17,22 @@
     </div>
   </section>
 
+  <aside class="resume-download" aria-label="Download résumé">
+    <button
+      type="button"
+      class="button button--dark resume-download__button"
+      [disabled]="isDownloading"
+      [attr.aria-busy]="isDownloading"
+      (click)="downloadResume()"
+    >
+      <span aria-hidden="true">↓</span>
+      {{ isDownloading ? 'Creating PDF…' : 'Download PDF' }}
+    </button>
+    <p *ngIf="downloadError" class="resume-download__error" role="alert">
+      {{ downloadError }}
+    </p>
+  </aside>
+
   <app-summary-section [summary]="resumeData.summary"></app-summary-section>
 
   <app-experience-section [entries]="resumeData.experience"></app-experience-section>

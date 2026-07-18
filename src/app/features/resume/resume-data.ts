@@ -28,6 +28,7 @@ export interface ResumeExperience {
   dateRange: string;
   location: string;
   highlights: readonly string[];
+  pdfHighlightIndexes?: readonly number[];
 }
 
 export interface ResumeProject {
@@ -37,6 +38,8 @@ export interface ResumeProject {
   description: string;
   highlights: readonly string[];
   tools: readonly string[];
+  pdfHighlightIndexes?: readonly number[];
+  pdfOrder?: number;
   liveUrl?: string;
 }
 
@@ -62,6 +65,7 @@ export interface ResumeData {
   contact: ResumeContact;
   header: ResumeHeader;
   summary: ResumeSummary;
+  pdfSummary: string;
   experience: readonly ResumeExperience[];
   projects: readonly ResumeProject[];
   education: ResumeEducation;
@@ -93,6 +97,8 @@ export const RESUME_DATA: ResumeData = {
     focus:
       'design-minded engineering, technical writing, developer education, and developer advocacy.',
   },
+  pdfSummary:
+    'Backend-leaning full-stack engineer with experience building Python automation, Node.js and Express APIs, Angular applications, and production workflows for business-critical internal tools. Combines backend development and system integration with a strong testing practice, product thinking, and clear technical communication.',
   experience: [
     {
       company: 'Burlington Stores, Inc.',
@@ -108,6 +114,7 @@ export const RESUME_DATA: ResumeData = {
         'Led testing efforts across two internal applications, establishing 1,007 front-end unit tests across most of RMT and helping build VBPT’s 604-test suite, including the team’s first 80 Cypress E2E tests.',
         'Support production deployments and release validation for internal tools, helping the team ship updates with more confidence and fewer regressions.',
       ],
+      pdfHighlightIndexes: [0, 1, 3, 4, 5, 6],
     },
     {
       company: 'Price Manager',
@@ -118,6 +125,7 @@ export const RESUME_DATA: ResumeData = {
         'Managed about a dozen client accounts by scraping competitor pricing with internal tools, keeping thousands of product SKUs current with pricing and related product data.',
         'Maintained client competitor portfolios by updating Excel-based pricing data and creating scraper templates that improved how internal tools captured comparable product information from competitor websites.',
       ],
+      pdfHighlightIndexes: [0],
     },
     {
       company: 'Statespace',
@@ -129,6 +137,7 @@ export const RESUME_DATA: ResumeData = {
         'Made builds for QA testers by deploying branch fixes and hosting builds on Jenkins, improving tester verification and bug-fix turnaround.',
         'Built a collaborative event portal with the 1047 Games team by creating a prefab with camera logic, VFX, camera masks, and scripted teleport behavior.',
       ],
+      pdfHighlightIndexes: [0, 1],
     },
     {
       company: 'Triple C Technologies, LLC',
@@ -139,6 +148,7 @@ export const RESUME_DATA: ResumeData = {
         'Built a virtual C# demonstration exported to WebGL, earning over 100 views from prospective clients within the first three hours.',
         'Led and collaborated with a remote engineering team through frequent video calls and messaging to deliver, approve, and publish the project within a 45-day timeline.',
       ],
+      pdfHighlightIndexes: [0],
     },
     {
       company: 'Digital Continue',
@@ -152,6 +162,7 @@ export const RESUME_DATA: ResumeData = {
         'Reviewed other engineers C# code through Jira and Git, helping catch issues before merge and saving engineers debugging time each week.',
         'Resolved more than 25 high-priority bugs per month by debugging and tracing through C# gameplay systems.',
       ],
+      pdfHighlightIndexes: [0, 1, 2, 4],
     },
   ],
   projects: [
@@ -168,6 +179,8 @@ export const RESUME_DATA: ResumeData = {
         'Planning a deeper case study covering design decisions, content strategy, visual direction, and implementation.',
       ],
       tools: ['Responsive design', 'SEO', 'Content strategy', 'Accessibility'],
+      pdfHighlightIndexes: [0, 2],
+      pdfOrder: 4,
     },
     {
       name: 'Vendor Brand Planning Tool',
@@ -181,6 +194,8 @@ export const RESUME_DATA: ResumeData = {
         'Participated in a rotating schedule for weekly production deployments and supported teammates with post-release validation.',
       ],
       tools: ['Cypress', 'TypeScript', 'CI/CD'],
+      pdfHighlightIndexes: [0, 1],
+      pdfOrder: 3,
     },
     {
       name: 'Reserve Management Tool',
@@ -195,6 +210,8 @@ export const RESUME_DATA: ResumeData = {
         'Enabled business users to manage millions of dollars in merchandise through near real-time schedule updates.',
       ],
       tools: ['Angular', 'TypeScript', 'Socket.IO', 'Unit testing', 'On-prem servers', 'npm'],
+      pdfHighlightIndexes: [1, 2],
+      pdfOrder: 2,
     },
     {
       name: 'Order Approval Tool',
@@ -208,6 +225,8 @@ export const RESUME_DATA: ResumeData = {
         'Built the front-end approval workflow with Angular, TypeScript, Python, Jasmine, and Karma, supporting an application that processes millions of dollars in orders each week.',
       ],
       tools: ['Angular', 'TypeScript', 'Python', 'Node.js', 'Express', 'Jasmine', 'Karma'],
+      pdfHighlightIndexes: [0, 1],
+      pdfOrder: 1,
     },
   ],
   education: {

@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "allowedCommonJsDependencies": [
-              "prismjs"
+              "prismjs",
+              "pdfmake/build/pdfmake",
+              "pdfmake/build/vfs_fonts"
             ],
             "styles": [
               "src/styles.scss"

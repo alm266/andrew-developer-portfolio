@@ -5,13 +5,18 @@ import { ExperienceCardComponent } from './experience-card/experience-card.compo
 import { ExperienceSectionComponent } from './experience-section/experience-section.component';
 import { ProjectSectionComponent } from './project-section/project-section.component';
 import { ResumeComponent } from './resume.component';
+import { ResumePdfService } from './resume-pdf.service';
 import { SummarySectionComponent } from './summary-section/summary-section.component';
 
 describe('ResumeComponent', () => {
   let component: ResumeComponent;
   let fixture: ComponentFixture<ResumeComponent>;
+  let resumePdfService: jasmine.SpyObj<ResumePdfService>;
 
   beforeEach(async () => {
+    resumePdfService = jasmine.createSpyObj<ResumePdfService>('ResumePdfService', ['download']);
+    resumePdfService.download.and.returnValue(Promise.resolve());
+
     await TestBed.configureTestingModule({
       declarations: [
         EducationSectionComponent,
@@ -21,6 +26,7 @@ describe('ResumeComponent', () => {
         ResumeComponent,
         SummarySectionComponent,
       ],
+      providers: [{ provide: ResumePdfService, useValue: resumePdfService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ResumeComponent);
@@ -61,5 +67,19 @@ describe('ResumeComponent', () => {
     expect(component.resumeData.experience).toHaveSize(5);
     expect(component.resumeData.projects).toHaveSize(4);
     expect(component.resumeData.skillGroups.length).toBeGreaterThan(0);
+  });
+
+  it('should download the shared résumé data from the floating action', async () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const button = compiled.querySelector<HTMLButtonElement>('.resume-download__button');
+
+    expect(button).toBeTruthy();
+
+    button?.click();
+    await fixture.whenStable();
+    fixture.detectChanges();
+
+    expect(resumePdfService.download).toHaveBeenCalledOnceWith(component.resumeData);
+    expect(component.isDownloading).toBeFalse();
   });
 });
