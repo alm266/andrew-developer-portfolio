@@ -10,6 +10,123 @@ import { ArticleTocItem, Project } from '../../shared';
 export class ProjectsComponent {
   readonly projects: Project[] = [
     {
+      id: 'therapy-with-ruth',
+      number: '04',
+      title: 'Therapy with Ruth Website',
+      category: 'Web design · Front-end development',
+      summary:
+        'A responsive website for a therapy practice designed to build trust, explain the practice clearly, and make reaching out feel like a manageable next step.',
+      confidentialityNote:
+        'The website is still being finalized with the client. Final imagery, the live-site link, and the case study will be added after client review and launch.',
+      preview: {
+        intro:
+          'The project is still in client review. These placeholders mark the public assets that will complete this overview after launch.',
+        media: [
+          {
+            label: 'Desktop project image',
+            placeholder:
+              'Add one polished desktop view after the final design is approved by the client.',
+          },
+          {
+            label: 'Mobile project image',
+            placeholder:
+              'Optional: add one mobile view to demonstrate how the experience adapts to a smaller screen.',
+          },
+        ],
+        links: [
+          {
+            label: 'Visit live site',
+            placeholder: 'Link will be added after launch.',
+          },
+          {
+            label: 'Read case study',
+            placeholder: 'Link will be added when the case study is published.',
+          },
+        ],
+      },
+      facts: [
+        { label: 'Role', value: 'Designer / Developer' },
+        { label: 'Timeline', value: 'April 2025 – Present' },
+        { label: 'Audience', value: 'Prospective therapy clients' },
+        { label: 'Status', value: 'Finalizing with client' },
+      ],
+      challenge:
+        'Choosing a therapist can be a personal and emotionally demanding decision. The practice needed a website that could establish trust, communicate essential information without overwhelming visitors, and make the next step clear. The experience also needed to work across screen sizes and help prospective clients discover the practice through search.',
+      contribution: [
+        'Designed and built the responsive website experience from visual direction through front-end implementation.',
+        'Structured the content and navigation around learning about the practice, understanding its services, and making contact.',
+        'Developed the site’s tone with attention to warmth, readability, accessibility, and trust-building.',
+        'Designed the content structure with SEO and Google Search discovery in mind.',
+      ],
+      decisions: [
+        {
+          title: 'Organize content around visitor questions',
+          description:
+            'Prioritized the information a prospective client is likely to look for first: who the therapist is, how the practice can help, and how to begin a conversation.',
+        },
+        {
+          title: 'Use visual restraint to support trust',
+          description:
+            'Kept the presentation calm and readable so the visual design supports the subject matter instead of competing with it.',
+        },
+        {
+          title: 'Make the next step clear without adding pressure',
+          description:
+            'Placed clear paths to contact throughout the experience while maintaining a considerate tone appropriate for someone deciding whether to reach out.',
+        },
+        {
+          title: 'Treat responsiveness and accessibility as core requirements',
+          description:
+            'Designed the experience to remain legible, navigable, and useful across screen sizes rather than treating the mobile layout as a reduced desktop page.',
+        },
+      ],
+      flowSectionLabel: 'Visitor journey',
+      flowTitle: 'From discovery to first contact',
+      flowIntro:
+        'The content structure follows the questions a prospective client is likely to have before deciding whether to reach out.',
+      flow: [
+        {
+          label: 'Discover the practice',
+          detail: 'A prospective client arrives through search, a referral, or a direct visit',
+        },
+        {
+          label: 'Learn about Ruth',
+          detail: 'The site introduces the therapist, the practice, and its approach in approachable language',
+        },
+        {
+          label: 'Understand the services',
+          detail: 'Focused content helps the visitor assess whether the practice may fit their needs',
+        },
+        {
+          label: 'Take the next step',
+          detail: 'A clear contact path gives the visitor a low-friction way to begin a conversation',
+        },
+      ],
+      outcomes: [
+        {
+          text: 'Designed and built a responsive experience tailored to prospective therapy clients.',
+        },
+        {
+          text: 'Created a content hierarchy centered on understanding the practice, evaluating its services, and making contact.',
+        },
+        {
+          text: 'Prepared the site structure and content for SEO and Google Search discovery.',
+        },
+        {
+          text: '[Placeholder: add a concise client quote or describe the feedback that shaped the approved design.]',
+          isPlaceholder: true,
+        },
+        {
+          text: '[Placeholder: add post-launch evidence such as search visibility, traffic, inquiries, performance, or accessibility results.]',
+          isPlaceholder: true,
+        },
+      ],
+      reflection:
+        '[Placeholder: complete after final client review and launch. Describe what changed during iteration, which client feedback influenced the result, and what you would measure or improve next.]',
+      reflectionIsPlaceholder: true,
+      tools: ['Responsive design', 'Content strategy', 'Accessibility', 'SEO'],
+    },
+    {
       id: 'vendor-brand-planning-tool',
       number: '02',
       title: 'Vendor Brand Planning Tool',

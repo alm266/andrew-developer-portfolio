@@ -12,6 +12,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ProjectsComponent } from './features/projects';
 import { ProjectDataStatesComponent } from './features/projects/project-data-states/project-data-states.component';
 import { ProjectFeatureComponent } from './features/projects/project-feature/project-feature.component';
+import { ProjectPreviewComponent } from './features/projects/project-preview/project-preview.component';
 import { ProjectSystemFlowComponent } from './features/projects/project-system-flow/project-system-flow.component';
 import { EducationSectionComponent } from './features/resume/education-section/education-section.component';
 import { ExperienceCardComponent } from './features/resume/experience-card/experience-card.component';
@@ -35,6 +36,7 @@ import { SharedModule } from './shared';
     HomeComponent,
     ProjectDataStatesComponent,
     ProjectFeatureComponent,
+    ProjectPreviewComponent,
     ProjectSectionComponent,
     ProjectSystemFlowComponent,
     ProjectsComponent,

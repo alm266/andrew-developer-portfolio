@@ -26,6 +26,26 @@ export interface ProjectOutcome {
   isPlaceholder?: boolean;
 }
 
+export interface ProjectMedia {
+  label: string;
+  src?: string;
+  alt?: string;
+  caption?: string;
+  placeholder?: string;
+}
+
+export interface ProjectLink {
+  label: string;
+  href?: string;
+  placeholder?: string;
+}
+
+export interface ProjectPreview {
+  intro?: string;
+  media: ProjectMedia[];
+  links: ProjectLink[];
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -33,6 +53,7 @@ export interface Project {
   category: string;
   summary: string;
   confidentialityNote?: string;
+  preview?: ProjectPreview;
   facts: ProjectFact[];
   challenge: string;
   contribution: string[];

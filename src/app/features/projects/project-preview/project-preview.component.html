@@ -1,0 +1,30 @@
+<section class="project-preview" aria-labelledby="project-preview-title">
+  <div class="project-preview__header">
+    <div>
+      <p>Public project</p>
+      <h3 id="project-preview-title">Project preview</h3>
+    </div>
+    <p *ngIf="preview.intro">{{ preview.intro }}</p>
+  </div>
+
+  <div class="project-preview__media">
+    <figure *ngFor="let media of preview.media">
+      <img *ngIf="media.src" [src]="media.src" [alt]="media.alt || ''" />
+      <div class="project-preview__placeholder" *ngIf="!media.src">
+        <span>{{ media.label }}</span>
+        <p>{{ media.placeholder }}</p>
+      </div>
+      <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>
+    </figure>
+  </div>
+
+  <ul class="project-preview__links" aria-label="Project links">
+    <li *ngFor="let link of preview.links">
+      <a *ngIf="link.href" class="button button--dark" [href]="link.href">{{ link.label }}</a>
+      <span *ngIf="!link.href" class="project-preview__pending">
+        <strong>{{ link.label }}</strong>
+        {{ link.placeholder }}
+      </span>
+    </li>
+  </ul>
+</section>

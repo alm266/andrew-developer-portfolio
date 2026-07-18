@@ -28,6 +28,11 @@
     {{ project.confidentialityNote }}
   </p>
 
+  <app-project-preview
+    *ngIf="project.preview"
+    [preview]="project.preview"
+  ></app-project-preview>
+
   <div class="project-feature__body">
     <div class="project-story">
       <section class="story-section" [id]="sectionId('challenge')">
