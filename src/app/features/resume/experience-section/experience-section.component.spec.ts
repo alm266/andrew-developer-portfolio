@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExperienceCardComponent } from '../experience-card/experience-card.component';
+import { RESUME_DATA } from '../resume-data';
 import { ExperienceSectionComponent } from './experience-section.component';
 
 describe('ExperienceSectionComponent', () => {
@@ -14,6 +15,7 @@ describe('ExperienceSectionComponent', () => {
 
     fixture = TestBed.createComponent(ExperienceSectionComponent);
     component = fixture.componentInstance;
+    component.entries = RESUME_DATA.experience;
     fixture.detectChanges();
   });
 

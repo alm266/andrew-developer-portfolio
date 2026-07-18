@@ -1,14 +1,10 @@
 <section class="summary" aria-labelledby="summary-title">
   <div class="summary__content">
     <p class="summary__eyebrow">Professional summary</p>
-    <h2 id="summary-title">Code, design, writing, and developer experience.</h2>
+    <h2 id="summary-title">{{ summary.heading }}</h2>
 
     <p class="summary__body">
-      I'm a software engineer interested in the space where code, design, writing, and developer
-      experience meet. After working across internal web apps, game development, APIs, testing,
-      and production support, I'm looking for opportunities that let me use that technical
-      background in more communicative and user-centered ways: <b>design-minded engineering,
-      technical writing, developer education, and developer advocacy.</b>
+      {{ summary.body }} <b>{{ summary.focus }}</b>
     </p>
   </div>
 </section>

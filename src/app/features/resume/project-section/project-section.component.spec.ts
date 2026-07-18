@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { RESUME_DATA } from '../resume-data';
 import { ProjectSectionComponent } from './project-section.component';
 
 describe('ProjectSectionComponent', () => {
@@ -13,6 +14,7 @@ describe('ProjectSectionComponent', () => {
 
     fixture = TestBed.createComponent(ProjectSectionComponent);
     component = fixture.componentInstance;
+    component.projects = RESUME_DATA.projects;
     fixture.detectChanges();
   });
 

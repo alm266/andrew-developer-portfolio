@@ -55,4 +55,11 @@ describe('ResumeComponent', () => {
 
     expect(compiled.querySelector('app-summary-section')).toBeTruthy();
   });
+
+  it('should expose one shared source for the webpage and future PDF', () => {
+    expect(component.resumeData.contact.email).toBe('andrewleonmarshall@gmail.com');
+    expect(component.resumeData.experience).toHaveSize(5);
+    expect(component.resumeData.projects).toHaveSize(4);
+    expect(component.resumeData.skillGroups.length).toBeGreaterThan(0);
+  });
 });

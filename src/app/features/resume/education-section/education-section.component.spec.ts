@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { RESUME_DATA } from '../resume-data';
 import { EducationSectionComponent } from './education-section.component';
 
 describe('EducationSectionComponent', () => {
@@ -13,6 +14,7 @@ describe('EducationSectionComponent', () => {
 
     fixture = TestBed.createComponent(EducationSectionComponent);
     component = fixture.componentInstance;
+    component.education = RESUME_DATA.education;
     fixture.detectChanges();
   });
 

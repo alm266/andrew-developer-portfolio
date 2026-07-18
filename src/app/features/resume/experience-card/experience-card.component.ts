@@ -1,12 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-export interface ExperienceEntry {
-  company: string;
-  role: string;
-  dateRange: string;
-  location: string;
-  highlights: string[];
-}
+import { ResumeExperience } from '../resume-data';
 
 @Component({
   selector: 'app-experience-card',
@@ -14,5 +8,5 @@ export interface ExperienceEntry {
   styleUrls: ['./experience-card.component.scss'],
 })
 export class ExperienceCardComponent {
-  @Input() entry!: ExperienceEntry;
+  @Input() entry!: ResumeExperience;
 }

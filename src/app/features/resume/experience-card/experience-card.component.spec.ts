@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExperienceCardComponent, ExperienceEntry } from './experience-card.component';
+import { ResumeExperience } from '../resume-data';
+import { ExperienceCardComponent } from './experience-card.component';
 
 describe('ExperienceCardComponent', () => {
   let component: ExperienceCardComponent;
   let fixture: ComponentFixture<ExperienceCardComponent>;
 
-  const entry: ExperienceEntry = {
+  const entry: ResumeExperience = {
     company: 'Test Company',
     role: 'Test Role',
     dateRange: '2020 - Present',

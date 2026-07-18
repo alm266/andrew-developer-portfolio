@@ -1,27 +1,19 @@
 <section class="education" aria-labelledby="education-title">
   <div class="education__content">
     <p class="education__eyebrow">Education</p>
-    <h2 id="education-title">Rutgers University, New Brunswick</h2>
+    <h2 id="education-title">{{ education.institution }}</h2>
 
     <article class="education-card">
       <div class="education-card__summary">
-        <h3>BS, Computer Science</h3>
-        <p>Second major in English</p>
+        <h3>{{ education.degree }}</h3>
+        <p>{{ education.secondaryStudy }}</p>
       </div>
-      <span>Graduated 2017</span>
+      <span>{{ education.graduation }}</span>
 
       <div class="education-card__details" aria-label="Education details">
-        <div>
-          <h4>Relevant coursework</h4>
-          <p>Data Structures, Algorithms, Databases, Artificial Intelligence, Systems Programming</p>
-        </div>
-
-        <div>
-          <h4>Campus leadership</h4>
-          <p>
-            President and Treasurer, Creation of Games Society (COGS); Corresponding Secretary,
-            MEET/NSBE
-          </p>
+        <div *ngFor="let detail of education.details">
+          <h4>{{ detail.label }}</h4>
+          <p>{{ detail.value }}</p>
         </div>
       </div>
     </article>

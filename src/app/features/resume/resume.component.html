@@ -2,29 +2,26 @@
   <section class="page__header" aria-labelledby="resume-title">
     <div class="page__header-content">
       <div class="page__header-copy">
-        <p class="page__eyebrow">Resume</p>
-        <h1 id="resume-title">Experience, skills, and selected career highlights.</h1>
-        <p>
-          A scannable version of the portfolio for hiring teams, collaborators, and anyone comparing
-          roles, tools, achievements, and focus areas.
-        </p>
+        <p class="page__eyebrow">{{ resumeData.header.eyebrow }}</p>
+        <h1 id="resume-title">{{ resumeData.header.title }}</h1>
+        <p>{{ resumeData.header.introduction }}</p>
       </div>
 
       <div class="page__profile-frame" aria-hidden="true">
         <img
           class="page__profile-image"
-          src="assets/andrew-profile-clean-wall.png"
+          [src]="resumeData.header.profileImage"
           alt=""
         />
       </div>
     </div>
   </section>
 
-  <app-summary-section></app-summary-section>
+  <app-summary-section [summary]="resumeData.summary"></app-summary-section>
 
-  <app-experience-section></app-experience-section>
+  <app-experience-section [entries]="resumeData.experience"></app-experience-section>
 
-  <app-project-section></app-project-section>
+  <app-project-section [projects]="resumeData.projects"></app-project-section>
 
-  <app-education-section></app-education-section>
+  <app-education-section [education]="resumeData.education"></app-education-section>
 </main>
