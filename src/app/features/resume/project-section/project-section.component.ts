@@ -67,6 +67,7 @@ export class ProjectSectionComponent {
         'Internal business application for merchants to request formal team-leader approval for vendor orders tied to store product.',
       highlights: [
         'Created a supporting user-data API with Node.js, Express, and TypeScript that serves hundreds of requests for business users.',
+        'Built three Python scripts and configured automated server jobs for opted-in approvals, user-cache maintenance, and merchant-hierarchy change notifications.',
         'Built the front-end approval workflow with Angular, TypeScript, Python, Jasmine, and Karma, supporting an application that processes millions of dollars in orders each week.',
       ],
       tools: ['Angular', 'TypeScript', 'Python', 'Node.js', 'Express', 'Jasmine', 'Karma'],

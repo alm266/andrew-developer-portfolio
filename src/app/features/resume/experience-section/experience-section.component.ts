@@ -16,6 +16,7 @@ export class ExperienceSectionComponent {
       location: 'Edgewater Park, New Jersey, United States',
       highlights: [
         'Build and support internal Angular, Python, and Microsoft Azure applications that help merchandising teams process millions of dollars of clothing orders daily.',
+        'Created three Python automation jobs for opted-in order approvals, user-cache maintenance, and merchant-hierarchy change notifications on company servers.',
         'Created an Angular, Socket.IO, and Microsoft Azure workflow for managing store shipment timing and sending near real-time updates to teammates.',
         'Built Node.js, Express, JavaScript, SQL, Swagger, and Oracle-backed APIs that support near real-time user and application data for roughly 2,000 internal users.',
         'Designed sales and inventory API contracts with Confluence, TypeScript, and JSON objects, helping the team validate and consume production data within a three-month staged rollout.',

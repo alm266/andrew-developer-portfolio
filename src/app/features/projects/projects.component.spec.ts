@@ -33,10 +33,15 @@ describe('ProjectsComponent', () => {
   it('should present the reserve management project as an editorial project feature', () => {
     const compiled = fixture.nativeElement as HTMLElement;
 
-    expect(compiled.querySelectorAll('.project-feature')).toHaveSize(2);
+    expect(compiled.querySelectorAll('.project-feature')).toHaveSize(3);
     expect(compiled.querySelector('.project-feature')).toBeTruthy();
     expect(compiled.textContent).toContain('Reserve Management Tool');
     expect(compiled.textContent).toContain('Vendor Brand Planning Tool');
+    expect(compiled.textContent).toContain('Order Approval Tool');
+    expect(compiled.textContent).toContain('4-person application team within a 4-team collaboration');
+    expect(compiled.textContent).toContain('A simplified approval-routing model');
+    expect(compiled.textContent).toContain('Pack & Hold');
+    expect(compiled.textContent).toContain('Created three Python scripts');
     expect(compiled.textContent).toContain('1,007 front-end unit tests');
     expect(compiled.textContent).toContain('604-test automated suite');
     expect(compiled.textContent).toContain('80 Cypress E2E tests');
@@ -55,7 +60,9 @@ describe('ProjectsComponent', () => {
     expect(compiled.querySelector('nav[aria-label="Projects"]')).toBeTruthy();
     expect(compiled.querySelectorAll('nav')).toHaveSize(1);
     expect(compiled.querySelector('.toc__children')).toBeFalsy();
-    expect(compiled.querySelectorAll('.tool-chips li')).toHaveSize(10);
+    expect(compiled.textContent).toContain('millions of dollars in vendor orders each week');
+    expect(compiled.querySelector('.is-placeholder')).toBeFalsy();
+    expect(compiled.querySelectorAll('.tool-chips li')).toHaveSize(17);
     expect(compiled.querySelector('.project-card')).toBeFalsy();
   });
 });
