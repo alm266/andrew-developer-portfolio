@@ -66,7 +66,8 @@ describe('ProjectsComponent', () => {
     expect(compiled.textContent).toContain('millions of dollars in vendor orders each week');
     expect(compiled.textContent).toContain('From discovery to first contact');
     expect(compiled.textContent).toContain('Finalizing with client');
-    expect(compiled.querySelectorAll('.project-preview__placeholder')).toHaveSize(2);
+    expect(compiled.querySelectorAll('.project-preview img')).toHaveSize(2);
+    expect(compiled.querySelector('.project-preview__placeholder')).toBeFalsy();
     expect(compiled.querySelectorAll('.project-preview__pending')).toHaveSize(2);
     expect(compiled.textContent).toContain('add post-launch evidence');
     expect(compiled.querySelector('.is-placeholder')).toBeTruthy();

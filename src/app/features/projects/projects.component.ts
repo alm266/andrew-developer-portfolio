@@ -17,20 +17,22 @@ export class ProjectsComponent {
       summary:
         'A responsive website for a therapy practice designed to build trust, explain the practice clearly, and make reaching out feel like a manageable next step.',
       confidentialityNote:
-        'The website is still being finalized with the client. Final imagery, the live-site link, and the case study will be added after client review and launch.',
+        'The website is still being finalized with the client. The live-site link and case study will be added after client review and launch.',
       preview: {
         intro:
-          'The project is still in client review. These placeholders mark the public assets that will complete this overview after launch.',
+          'These desktop and mobile homepage views show how the current design adapts its content, navigation, and imagery across screen sizes.',
         media: [
           {
-            label: 'Desktop project image',
-            placeholder:
-              'Add one polished desktop view after the final design is approved by the client.',
+            label: 'Desktop homepage',
+            src: 'assets/therapy-with-ruth/new/desktop/homepage-hero-desktop.png',
+            alt: 'Desktop homepage hero for Therapy with Ruth, featuring orange flowers, an introduction to the practice, and a contact button.',
+            caption: 'Desktop homepage hero',
           },
           {
-            label: 'Mobile project image',
-            placeholder:
-              'Optional: add one mobile view to demonstrate how the experience adapts to a smaller screen.',
+            label: 'Mobile homepage',
+            src: 'assets/therapy-with-ruth/new/mobile/homepage-hero.png',
+            alt: 'Mobile homepage hero for Therapy with Ruth, with a compact menu, responsive flower imagery, practice information, and a contact button.',
+            caption: 'Mobile homepage hero',
           },
         ],
         links: [
