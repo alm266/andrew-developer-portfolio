@@ -13,7 +13,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Andrew Marshall | Front-End Engineer',
+    title: 'Andrew Marshall | Full-Stack Engineer',
   },
   {
     path: 'projects',

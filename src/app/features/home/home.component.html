@@ -2,16 +2,133 @@
   <app-hero-section></app-hero-section>
 
   <section id="work" class="section section--muted" aria-labelledby="work-title">
-    <div class="section__header">
-      <p class="section__eyebrow">Selected work</p>
-      <h2 id="work-title">Product interfaces, systems, and developer experiences.</h2>
+    <div class="section__content">
+      <header class="section__header">
+        <div>
+          <p class="section__eyebrow">Selected work</p>
+          <h2 id="work-title">Systems designed around real business decisions.</h2>
+        </div>
+        <p>
+          A selection of full-stack workflows, collaborative interfaces, and client work. Each
+          overview focuses on the problem, my ownership, and the decisions behind the implementation.
+        </p>
+      </header>
+
+      <div class="featured-work">
+        <article class="featured-project" *ngFor="let project of featuredProjects; let index = index">
+          <div class="featured-project__content">
+            <p class="featured-project__number" aria-hidden="true">0{{ index + 1 }}</p>
+            <p class="featured-project__category">{{ project.category }}</p>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.summary }}</p>
+            <p class="featured-project__evidence">{{ project.evidence }}</p>
+
+            <ul class="tag-list" [attr.aria-label]="project.title + ' skills and technologies'">
+              <li *ngFor="let tool of project.tools">{{ tool }}</li>
+            </ul>
+
+            <a class="text-link" routerLink="/projects" [fragment]="project.fragment">
+              View project overview <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <figure *ngIf="project.image; else projectProof" class="featured-project__image">
+            <img [src]="project.image" [alt]="project.imageAlt || ''" />
+          </figure>
+
+          <ng-template #projectProof>
+            <div class="featured-project__proof" aria-label="Project evidence">
+              <strong>{{ project.proofValue }}</strong>
+              <span>{{ project.proofLabel }}</span>
+            </div>
+          </ng-template>
+        </article>
+      </div>
+
+      <a class="button button--outline-dark section__action" routerLink="/projects">
+        View all projects
+      </a>
     </div>
   </section>
 
   <section id="writing" class="section" aria-labelledby="writing-title">
-    <div class="section__header">
-      <p class="section__eyebrow">Writing</p>
-      <h2 id="writing-title">Technical stories with a designer's eye.</h2>
+    <div class="section__content">
+      <header class="section__header">
+        <div>
+          <p class="section__eyebrow">Writing</p>
+          <h2 id="writing-title">Technical ideas made easier to use.</h2>
+        </div>
+        <p>
+          Documentation and developer education grounded in the engineering work behind tests,
+          production workflows, and internal tools.
+        </p>
+      </header>
+
+      <div class="writing-grid">
+        <article class="writing-preview" *ngFor="let article of featuredWriting">
+          <p class="writing-preview__eyebrow">{{ article.eyebrow }}</p>
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.summary }}</p>
+          <ul class="tag-list" [attr.aria-label]="article.title + ' topics'">
+            <li *ngFor="let tag of article.tags">{{ tag }}</li>
+          </ul>
+          <a class="text-link" routerLink="/writing" [fragment]="article.fragment">
+            Read article <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+
+      <a class="button button--outline-dark section__action" routerLink="/writing">
+        View all writing
+      </a>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="capabilities-title">
+    <div class="section__content">
+      <header class="section__header">
+        <div>
+          <p class="section__eyebrow">What I bring</p>
+          <h2 id="capabilities-title">Technical depth with a clear point of view.</h2>
+        </div>
+        <p>
+          I work across code, product decisions, and communication to help teams build software that
+          is reliable, understandable, and easier to change.
+        </p>
+      </header>
+
+      <div class="capability-grid">
+        <article *ngFor="let capability of capabilities">
+          <p>{{ capability.number }}</p>
+          <h3>{{ capability.title }}</h3>
+          <p>{{ capability.description }}</p>
+        </article>
+      </div>
+
+      <div class="section__links">
+        <a class="text-link text-link--light" routerLink="/about">More about me →</a>
+        <a class="text-link text-link--light" routerLink="/resume">View résumé →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section home-contact" aria-labelledby="home-contact-title">
+    <div class="home-contact__content">
+      <div>
+        <p class="section__eyebrow">Start a conversation</p>
+        <h2 id="home-contact-title">Let’s build something clear, useful, and dependable.</h2>
+      </div>
+      <div>
+        <p>
+          I’m interested in engineering roles and conversations about internal tools, developer
+          experience, testing, documentation, and thoughtful product development.
+        </p>
+        <div class="home-contact__actions">
+          <a class="button button--dark" routerLink="/contact">Contact me</a>
+          <a class="button button--outline-dark" href="https://github.com/alm266" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button button--outline-dark" href="https://www.linkedin.com/in/andrewleonmarshall" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
