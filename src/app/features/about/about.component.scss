@@ -135,7 +135,7 @@ h2 {
 
   .about-hero__image {
     order: -1;
-    min-height: 620px;
+    min-height: clamp(280px, 52vh, 420px);
   }
 
   .about-story {
