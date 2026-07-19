@@ -17,6 +17,8 @@
   gap: clamp(24px, 4%, 48px);
   align-items: center;
   min-height: 88vh;
+  background: #181816;
+  color: #fbfaf7;
 }
 
 .about-hero__content {
@@ -44,6 +46,10 @@
   text-transform: uppercase;
 }
 
+.about-hero .page__eyebrow {
+  color: #f1d59d;
+}
+
 h1,
 h2,
 h3,
@@ -60,7 +66,7 @@ h1 {
 
 .about-hero__content > p:last-child {
   max-width: 720px;
-  color: #44413c;
+  color: #fbfaf7;
   font-size: 1.1rem;
   line-height: 1.7;
 }
