@@ -114,18 +114,18 @@ export class ProjectsComponent {
         {
           text: 'Prepared the site structure and content for SEO and Google Search discovery.',
         },
-        {
-          text: '[Placeholder: add a concise client quote or describe the feedback that shaped the approved design.]',
-          isPlaceholder: true,
-        },
-        {
-          text: '[Placeholder: add post-launch evidence such as search visibility, traffic, inquiries, performance, or accessibility results.]',
-          isPlaceholder: true,
-        },
+        // {
+        //   text: '[Placeholder: add a concise client quote or describe the feedback that shaped the approved design.]',
+        //   isPlaceholder: true,
+        // },
+        // {
+        //   text: '[Placeholder: add post-launch evidence such as search visibility, traffic, inquiries, performance, or accessibility results.]',
+        //   isPlaceholder: true,
+        // },
       ],
       reflection:
-        '[Placeholder: complete after final client review and launch. Describe what changed during iteration, which client feedback influenced the result, and what you would measure or improve next.]',
-      reflectionIsPlaceholder: true,
+        'Working directly with a client who is less immersed in technology reinforced the importance of translating technical decisions into clear, approachable language. It also taught me to listen for the underlying need behind raw feedback and turn it into concrete design and development changes. As the project moves toward completion, those communication skills have become just as important as the implementation itself.',
+      //reflectionIsPlaceholder: true,
       tools: ['Responsive design', 'Content strategy', 'Accessibility', 'SEO'],
     },
     {
