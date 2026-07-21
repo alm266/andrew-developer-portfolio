@@ -29,6 +29,8 @@ export function buildResumePdfDefinition(data: ResumeData): TDocumentDefinitions
         { text: data.contact.githubLabel, link: data.contact.githubUrl },
         { text: '   •   ', color: RULE },
         { text: data.contact.linkedinLabel, link: data.contact.linkedinUrl },
+        { text: '   •   ', color: RULE },
+        { text: data.contact.websiteLabel, link: data.contact.websiteUrl },
       ],
       style: 'contact',
     },

@@ -7,6 +7,8 @@ export interface ResumeContact {
   githubUrl: string;
   linkedinLabel: string;
   linkedinUrl: string;
+  websiteLabel: string;
+  websiteUrl: string;
 }
 
 export interface ResumeHeader {
@@ -82,6 +84,8 @@ export const RESUME_DATA: ResumeData = {
     githubUrl: 'https://github.com/alm266',
     linkedinLabel: 'linkedin.com/in/andrewleonmarshall',
     linkedinUrl: 'https://www.linkedin.com/in/andrewleonmarshall',
+    websiteLabel: 'andrewmars.com',
+    websiteUrl: 'https://www.andrewmars.com/',
   },
   header: {
     eyebrow: 'Resume',

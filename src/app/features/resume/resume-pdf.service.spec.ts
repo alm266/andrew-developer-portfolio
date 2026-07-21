@@ -18,6 +18,7 @@ describe('ResumePdfService document', () => {
 
     expect(definition.pageSize).toBe('LETTER');
     expect(serialized).toContain(RESUME_DATA.contact.email);
+    expect(serialized).toContain(RESUME_DATA.contact.websiteUrl);
     expect(serialized).toContain(RESUME_DATA.pdfSummary);
     expect(serialized.indexOf('Order Approval Tool')).toBeLessThan(
       serialized.indexOf('Therapy with Ruth Website')
