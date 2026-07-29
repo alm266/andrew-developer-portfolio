@@ -18,12 +18,24 @@ export class CaseStudiesComponent {
       tags: ['SEO', 'UX', 'Client Work', 'Small Business'],
       content: [
         {
+          type: 'heading',
+          text: 'Project overview',
+        },
+        {
           type: 'paragraph',
           text: `For this case study, I am going to focus on some work I have done for a client who runs her own therapy practice. She is a practitioner who provides different mental health services for people within the state of New York, where she is licensed. She has a steady group of patrons who work with her, some of whom she has had for many years. So far, most people who find her business see her on Psychology Today or another similar online board of therapists that prospective clients can comb through.`,
         },
         {
+          type: 'heading',
+          text: 'The client and business goal',
+        },
+        {
           type: 'paragraph',
           text: `In early 2026, Ruth came to me and proposed that I help her with search engine optimization (SEO) for her website so that she might have a higher chance of new clients discovering her practice. She shared her current Wix website, which she had created herself. The site was simple; it had five static pages, each with information for clients to read and see what she could provide for them.`,
+        },
+        {
+          type: 'heading',
+          text: 'Evaluating the original website',
         },
         {
           type: 'paragraph',
@@ -34,8 +46,16 @@ export class CaseStudiesComponent {
           text: `The next thing I noticed was that while the home page was simple with minimal text on screen, most other pages were very text heavy, which made them look busy and made it hard to pick out what information was important. She tried to fit everything on a page into one screen so the user did not have to scroll. This resulted in text covering most of each screen from edge to edge, which also contributed to the issues with reactivity. On different screen sizes, some elements were oddly anchored and would overlap with things they were not intended to. In mobile, this usually translated into scrolling through multiple screens of text.`,
         },
         {
+          type: 'heading',
+          text: 'Defining success',
+        },
+        {
           type: 'paragraph',
           text: `Trying not to stray too far from what she came to me for, I started doing some research on what makes for effective website SEO. Optimizing for search engines boils down to making it as easy as possible for search engines to read and understand the structure of your website. Every page should have a distinct and clear purpose. Ruth’s current site did this to some degree; however, the text content for Specialties and Modalities had too many definitions on the pages. They would benefit from being separated into their own pages or simplified in order not to overwhelm people interested in what she can provide. Additionally, the pages should also be well organized from an HTML perspective.`,
+        },
+        {
+          type: 'heading',
+          text: 'SEO and accessibility implementation',
         },
         {
           type: 'paragraph',
@@ -52,6 +72,10 @@ export class CaseStudiesComponent {
         {
           type: 'paragraph',
           text: `Some search engines in recent years have begun valuing mobile sites above the desktop versions. If a website is formatted oddly or text overlaps with other items when it is in mobile view, it negatively impacts the user experience, and search engines like Google will not reward you for it. The more easily users are able to engage with your website, the more the site’s SEO is positively impacted. People look at their phones on lunch breaks, during commercial breaks during television shows, or while riding the train. There is value in making sure a website can be scanned quickly and understood. With all that in mind, I began to map out a plan for how I needed to tackle SEO for Ruth’s therapy website.`,
+        },
+        {
+          type: 'heading',
+          text: 'Restructuring the content',
         },
         {
           type: 'paragraph',
@@ -71,6 +95,10 @@ export class CaseStudiesComponent {
         {
           type: 'paragraph',
           text: `I added an FAQ page so that Ruth can add any questions that are typically asked and any that come up in the future, all in an easy-to-find place. I also added a Blog page because I read that blogs are an effective way to show search engines that the site is active and being used, so they should keep serving it in new search queries. It also provides another way for Ruth to connect with current and potential clients, as well as build trust in her and the work she does. I asked for her help in populating some common FAQs she receives. I also gave her the homework of writing a few brief posts that we could launch the site with so that people could see them right away. She sounded enthusiastic at the idea of engaging with clients in this new way, so I believe it could be a fruitful addition.`,
+        },
+        {
+          type: 'heading',
+          text: 'Designing for trust',
         },
         {
           type: 'paragraph',
@@ -107,12 +135,24 @@ export class CaseStudiesComponent {
           text: `The following sections build that story for readers. They include the Problem, Services, About, Approach, Getting Started, Location, FAQs, and Contact/Call to Action sections. Effectively, I wanted to present different pieces of information that potential clients would be looking for and give them an easy way to jump to them. I also wanted to form my story, that Ruth is professional and trustworthy, so readers should reach out for a consultation. The homepage acts as a synopsis of what the rest of the site has to offer to users. Each section gives a glimpse into the information you find, as well as encourages you to explore by using buttons with links. Every page, with the exception of the Blog and Contact page itself, has a call to action at the end with a button linking to the Contact page. All the pages support the main story, that Ruth can help you with your mental health needs and that you should reach out to her to learn more about how. Her about page creates the story that she shared with me, that she is an immigrant who has had to work through various challenges in her life that have come along with that. This is important to her story and serves as a basis for connecting with the clients she is trying to find to work with.`,
         },
         {
+          type: 'heading',
+          text: 'Client feedback and iteration',
+        },
+        {
           type: 'paragraph',
           text: `Once I created all the pages and rewrote the text content, it was time to launch the site. As of this writing, the site has not yet launched, unfortunately, as I have been working with my client on some feedback she has on the site. I will update this article with more detailed results once I have them to provide.`,
         },
         {
+          type: 'heading',
+          text: 'What I learned',
+        },
+        {
           type: 'paragraph',
           text: `So far, I have learned a few things from this experience. I learned a lot about the specifics of search engine optimization, a topic I only had a high-level understanding of prior. I studied effective accessibility and how important it is for pages to be easily digestible by users. Working in Wix showed me that while the tools you use are important, what is most important is how you use them. I did my best to play to the strengths of this platform, to understand how it goes about handling things like resizing and mobile view, as well as HTML structure and alt tags. I have also learned about the process of parsing feedback. Oftentimes, people can tell you when something is wrong, but don’t always have the understanding or vocabulary to say how to fix it. I realized it is often most valuable to observe the actions of users and to dissect what the root cause is for things that they are pointing out rather than take all suggestions at face value. There are times when that is only a band-aid over a bigger or the wrong issue. I have had to inspect what I was being told in order to understand what my client was really trying to convey to me, so I could deliver something that better met her vision for the project.`,
+        },
+        {
+          type: 'heading',
+          text: 'Launch and early outcomes',
         },
         {
           type: 'paragraph',
