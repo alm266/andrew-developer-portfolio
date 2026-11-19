@@ -7,6 +7,10 @@
   <h3>{{ article.title }}</h3>
   <p class="article-card__summary" *ngIf="article.summary">{{ article.summary }}</p>
 
+  <p class="article-card__top-link" *ngIf="article.showLinkAtTop && article.href">
+    <a class="article-card__link" [href]="article.href">{{ article.linkLabel || 'Read article' }}</a>
+  </p>
+
   <div class="article-card__content" *ngIf="article.content?.length">
     <ng-container *ngFor="let block of article.content">
       <p *ngIf="block.type === 'paragraph' && (block.text || block.parts?.length)">
@@ -68,7 +72,7 @@
         </video>
 
         <ng-template #imageMedia>
-          <img [src]="media.src" [alt]="media.alt" loading="lazy" />
+          <img [src]="media.src" [alt]="media.alt" [class.article-card__image--compact]="media.size === 'compact'" loading="lazy" />
         </ng-template>
 
         <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>

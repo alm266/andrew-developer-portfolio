@@ -2,6 +2,7 @@ export interface ArticleMedia {
   src: string;
   alt: string;
   caption?: string;
+  size?: 'compact';
   kind?: 'image' | 'video';
   mimeType?: string;
   poster?: string;
@@ -37,6 +38,7 @@ export interface Article {
   date?: string;
   href?: string;
   linkLabel?: string;
+  showLinkAtTop?: boolean;
   tags?: string[];
 }
 

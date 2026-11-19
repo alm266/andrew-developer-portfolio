@@ -65,10 +65,12 @@ describe('ProjectsComponent', () => {
     expect(compiled.querySelector('.toc__children')).toBeFalsy();
     expect(compiled.textContent).toContain('millions of dollars in vendor orders each week');
     expect(compiled.textContent).toContain('From discovery to first contact');
-    expect(compiled.textContent).toContain('Finalizing with client');
+    expect(compiled.textContent).toContain('Live — launched August 18, 2026');
     expect(compiled.querySelectorAll('.project-preview img')).toHaveSize(2);
     expect(compiled.querySelector('.project-preview__placeholder')).toBeFalsy();
-    expect(compiled.querySelectorAll('.project-preview__pending')).toHaveSize(2);
+    expect(compiled.querySelectorAll('.project-preview__pending')).toHaveSize(0);
+    expect(compiled.querySelector('a[href="https://therapywithruth.com/"]')).toBeTruthy();
+    expect(compiled.querySelector('a[href="/case-studies#therapy-with-ruth-optimizing-small-business-website-for-seo-1"]')).toBeTruthy();
     //expect(compiled.textContent).toContain('add post-launch evidence');
     //expect(compiled.querySelector('.is-placeholder')).toBeTruthy();
     expect(compiled.querySelectorAll('.tool-chips li')).toHaveSize(21);

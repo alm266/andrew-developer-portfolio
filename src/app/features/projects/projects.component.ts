@@ -16,21 +16,19 @@ export class ProjectsComponent {
       category: 'Web design · Front-end development',
       summary:
         'A responsive website for a therapy practice designed to build trust, explain the practice clearly, and make reaching out feel like a manageable next step.',
-      confidentialityNote:
-        'The website is still being finalized with the client. The live-site link and case study will be added after client review and launch.',
       preview: {
         intro:
           'These desktop and mobile homepage views show how the current design adapts its content, navigation, and imagery across screen sizes.',
         media: [
           {
             label: 'Desktop homepage',
-            src: 'assets/therapy-with-ruth/new/desktop/homepage-hero-desktop.png',
+            src: 'assets/therapy-with-ruth/completed/angular-homepage-hero.png',
             alt: 'Desktop homepage hero for Therapy with Ruth, featuring orange flowers, an introduction to the practice, and a contact button.',
             caption: 'Desktop homepage hero',
           },
           {
             label: 'Mobile homepage',
-            src: 'assets/therapy-with-ruth/new/mobile/homepage-hero.png',
+            src: 'assets/therapy-with-ruth/completed/angular-homepage-hero-mobile.png',
             alt: 'Mobile homepage hero for Therapy with Ruth, with a compact menu, responsive flower imagery, practice information, and a contact button.',
             caption: 'Mobile homepage hero',
           },
@@ -38,11 +36,11 @@ export class ProjectsComponent {
         links: [
           {
             label: 'Visit live site',
-            placeholder: 'Link will be added after launch.',
+            href: 'https://therapywithruth.com/',
           },
           {
             label: 'Read case study',
-            placeholder: 'Link will be added when the case study is published.',
+            href: '/case-studies#therapy-with-ruth-optimizing-small-business-website-for-seo-1',
           },
         ],
       },
@@ -50,7 +48,7 @@ export class ProjectsComponent {
         { label: 'Role', value: 'Designer / Developer' },
         { label: 'Timeline', value: 'April 2025 – Present' },
         { label: 'Audience', value: 'Prospective therapy clients' },
-        { label: 'Status', value: 'Finalizing with client' },
+        { label: 'Status', value: 'Live — launched August 18, 2026' },
       ],
       challenge:
         'Choosing a therapist can be a personal and emotionally demanding decision. The practice needed a website that could establish trust, communicate essential information without overwhelming visitors, and make the next step clear. The experience also needed to work across screen sizes and help prospective clients discover the practice through search.',
@@ -124,7 +122,7 @@ export class ProjectsComponent {
         // },
       ],
       reflection:
-        'Working directly with a client who is less immersed in technology reinforced the importance of translating technical decisions into clear, approachable language. It also taught me to listen for the underlying need behind raw feedback and turn it into concrete design and development changes. As the project moves toward completion, those communication skills have become just as important as the implementation itself.',
+        'Working directly with a client who is less immersed in technology reinforced the importance of translating technical decisions into clear, approachable language. It also taught me to listen for the underlying need behind raw feedback and turn it into concrete design and development changes. Those communication skills proved just as important as the implementation itself.',
       //reflectionIsPlaceholder: true,
       tools: ['Responsive design', 'Content strategy', 'Accessibility', 'SEO'],
     },
